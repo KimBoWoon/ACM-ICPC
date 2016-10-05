@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{186396B3-DF77-4DE4-BB05-26517BFC0114}</ProjectGuid>
+    <ProjectGuid>{E3408710-8142-4EF6-BD69-65963375BFAD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My2293</RootNamespace>
+    <RootNamespace>My5522</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,7 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="2293.cpp" />
+    <ClCompile Include="5522.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
