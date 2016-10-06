@@ -5,26 +5,35 @@ using namespace std;
 
 #pragma warning(disable:4996)
 
+typedef struct top {
+    int index, height;
+} Top;
+
 int main() {
-	int n = 0, height = 0;
-	int *arr = NULL;
-	stack<int> s;
+    int n = 0;
+    stack<Top> s;
 
-	scanf("%d", &n);
+    scanf("%d", &n);
 
-	while (true) {
-		int temp;
+    for (int i = 0; i < n; i++) {
+        int temp;
 
-		scanf("%d", &temp);
-		s.push(temp);
+        scanf("%d", &temp);
 
-		if (height > s.top()) {
-			printf("%d ", 1);
-		}
-		else {
-			printf("0 ");
-		}
-	}
+        while (true) {
+            if (s.empty()) {
+                printf("0 ");
+                s.push({i + 1, temp});
+                break;
+            } else if (s.top().height > temp) {
+                printf("%d ", s.top().index);
+                s.push({i + 1, temp});
+                break;
+            } else {
+                s.pop();
+            }
+        }
+    }
 
-	return 0;
+    return 0;
 }
