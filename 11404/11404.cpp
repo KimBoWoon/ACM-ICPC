@@ -6,12 +6,6 @@ using namespace std;
 int arr[101][101], c[101][101];
 
 void Floyd(int arr[101][101], int start, int end) {
-	for (int i = 1; i <= end; i++) {
-		for (int j = 1; j <= end; j++) {
-			c[i][j] = arr[i][j];
-		}
-	}
-
 	for (int k = 1; k <= end; k++) {
 		for (int i = 1; i <= end; i++) {
 			for (int j = 1; j <= end; j++) {
@@ -30,8 +24,9 @@ int main() {
 
 	for (int x = 0; x < 101; x++) {
 		for (int y = 0; y < 101; y++) {
-			if (x - y)
+			if (x - y) {
 				arr[x][y] = 999999999;
+			}
 		}
 	}
 
@@ -43,12 +38,19 @@ int main() {
 			arr[x][y] = c;
 	}
 
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= n; j++) {
+			c[i][j] = arr[i][j];
+		}
+	}
+
 	Floyd(arr, 1, n);
 
 	for (int i = 1; i <= n; i++)
 	{
-		for (int j = 1; j <= n; j++)
+		for (int j = 1; j <= n; j++) {
 			printf("%d ", c[i][j]);
+		}
 		printf("\n");
 	}
 }

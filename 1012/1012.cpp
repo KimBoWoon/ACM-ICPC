@@ -1,58 +1,50 @@
-//
-// Created by secret on 10/6/16.
-//
-
 #include <cstdio>
 #include <cstring>
-#include <memory>
 using namespace std;
 
-int roomSize(int arr[51][51], int x, int y, int row, int col);
+#pragma warning(disable:4996)
 
 int arr[51][51];
+int dx[] = { 1, -1, 0, 0 }, dy[] = { 0, 0, 1, -1 };
+int testCase, row, col, n, cnt;
 
-int main() {
-    int testCase;
+void dfs(int x, int y) {
+	if (x < 0 || y < 0 || x > row || y > col || !arr[x][y]) {
+		return;
+	}
 
-    scanf("%d", &testCase);
+	arr[x][y] = 0;
 
-    while (testCase--) {
-        int row, col, cnt, size, a = 0;
-
-        scanf("%d %d %d", &row, &col, &cnt);
-
-        for (int i = 0; i < cnt; i++) {
-            int x, y;
-
-            scanf("%d %d", &x, &y);
-
-            arr[y][x] = 1;
-        }
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                size = roomSize(arr, x, y, col, row);
-                if (size != 0)
-                    a++;
-            }
-        }
-        printf("%d\n", a);
-    }
+	for (int i = 0; i < 4; i++) {
+		dfs(x + dx[i], y + dy[i]);
+	}
 }
 
-int roomSize(int arr[51][51], int x, int y, int row, int col) {
-    int count = 0;
+int main() {
+	scanf("%d", &testCase);
 
-    if ((x > 0 && y > 0) && (x < row && y < col)) {
-        if (arr[x][y] == 1) {
-            count++;
-            arr[x][y] = 0;
-            if (arr[x][y + 1] != 0 || arr[x + 1][y] != 0 || arr[x][y - 1] != 0 || arr[x - 1][y] != 0) {
-                count += roomSize(arr, x, y + 1, row, col);
-                count += roomSize(arr, x, y - 1, row, col);
-                count += roomSize(arr, x + 1, y, row, col);
-                count += roomSize(arr, x - 1, y, row, col);
-            }
-        }
-    }
-    return count;
+	while (testCase--) {
+		memset(arr, 0, 51 * 51);
+
+		cnt = 0;
+
+		scanf("%d %d %d", &row, &col, &n);
+
+		for (int i = 0; i < n; i++) {
+			int x, y;
+			scanf("%d %d", &x, &y);
+			arr[x][y] = 1;
+		}
+
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				if (arr[i][j]) {
+					cnt++;
+					dfs(i, j);
+				}
+			}
+		}
+
+		printf("%d\n", cnt);
+	}
 }
