@@ -22,13 +22,11 @@ int main() {
 
 	for (int i = 0; i < n; i++) {
 		for (int j = coin[i]; j <= k; j++) {
-			if (j >= coin[i] && cache[j - coin[i]] != -1) {
-				if (cache[j] == -1) {
-					cache[j] = cache[j - coin[i]] + 1;
-				}
-				else {
-					cache[j] = min(cache[j], cache[j - coin[i]] + 1);
-				}
+			if (cache[j] == -1) {
+				cache[j] = cache[j - coin[i]] + 1;
+			}
+			else {
+				cache[j] = min(cache[j], cache[j - coin[i]] + 1);
 			}
 		}
 	}
