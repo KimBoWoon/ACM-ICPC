@@ -33,3 +33,8 @@
 
 # opensdf
 *.opensdf
+
+# etc
+*.sdf
+*.sln
+./CMakeLists.txt
