@@ -17,6 +17,7 @@ int main() {
 
 	result[0][1] = wine[0];
 	for (int i = 1; i < n; i++) {
+		//result[i][0] : Ã¹¹øÂ° ÀÜ, result[i][1] : µÎ¹øÂ° ÀÜ, result[i][2] : ¼¼¹øÂ° ÀÜ
 		result[i][0] = max(result[i - 1][0], max(result[i - 1][1], result[i - 1][2]));
 		result[i][1] = wine[i] + result[i - 1][0];
 		result[i][2] = wine[i] + result[i - 1][1];
