@@ -37,4 +37,5 @@
 # etc
 *.sdf
 *.sln
+*.suo
 ./CMakeLists.txt
