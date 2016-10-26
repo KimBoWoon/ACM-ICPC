@@ -2,7 +2,7 @@
 // Created by secret on 10/26/16.
 //
 
-#include <bits/stdc++.h>
+#include <iostream>
 #include <string>
 
 using namespace std;
