@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <map>
 #include <vector>
 #include <string>
@@ -8,28 +9,29 @@ using namespace std;
 
 #pragma warning(disable:4996)
 
-int k, l;
-string s;
-map<string, int> m;
-vector<pair<int, string> > v;
+int k, l, data;
+map<int, int> m;
+vector<pair<int, int> > v;
+
+bool comp(const pair<int, int> &x, const pair<int, int> &y) {
+	return x.second < y.second;
+}
 
 int main() {
-    cin >> k >> l;
+	scanf("%d %d", &k, &l);
 
-    for (int i = 0; i < l; i++) {
-        cin >> s;
-        m[s] = i + 1;
-    }
+	for (int i = 0; i < l; i++) {
+		scanf("%d", &data);
+		m[data] = i + 1;
+	}
 
-    for (map<string, int>::iterator iter = m.begin(); iter != m.end(); iter++) {
-        v.push_back({iter->second, iter->first});
-    }
+	v = vector<pair<int, int> >(m.begin(), m.end());
 
-    sort(v.begin(), v.end());
+	sort(v.begin(), v.end(), comp);
 
-    for (int i = 0; i < k; i++) {
-        cout << v[i].second << endl;
-    }
+	for (int i = 0; i < k && i < v.size(); i++) {
+		printf("%08d\n", v[i].first);
+	}
 
-    return 0;
+	return 0;
 }
