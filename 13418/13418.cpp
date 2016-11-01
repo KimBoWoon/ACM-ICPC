@@ -9,9 +9,9 @@ typedef struct edge {
 	int start, end, weight;
 } Edge;
 
-int up[1001];
-int weight[1001];
-int n, m, x, y, t, minCost = 0, maxCost = 0;
+int up[500000];
+int weight[500000];
+int n, m, x, y, t;
 vector<Edge> edge, selectEdge;
 
 bool comp1(const Edge x, const Edge y) {
@@ -81,7 +81,10 @@ int main() {
 
 	scanf("%d %d", &n, &m);
 
-	for (int i = 0; i < m + 1; i++) {
+	scanf("%d %d %d", &x, &y, &t);
+	edge.push_back({ x, y, t });
+
+	for (int i = 0; i < m; i++) {
 		scanf("%d %d %d", &x, &y, &t);
 		edge.push_back({ x, y, t });
 	}
@@ -89,9 +92,9 @@ int main() {
 	for (int i = 0; i < 2; i++) {
 		sort(edge.begin(), edge.end(), comp[i]);
 
-		for (int i = 0; i < 1000; i++) {
-			up[i] = 0;
-			weight[i] = 1;
+		for (int j = 0; j < 500000; j++) {
+			up[j] = 0;
+			weight[j] = 1;
 		}
 
 		Kruskal();
