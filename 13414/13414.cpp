@@ -1,34 +1,35 @@
 #include <iostream>
-#include <set>
-#include <stack>
+#include <map>
+#include <vector>
 #include <string>
+#include <algorithm>
+
 using namespace std;
 
 #pragma warning(disable:4996)
 
 int k, l;
-string v[500001];
-stack<string> s;
-set<string> table;
+string s;
+map<string, int> m;
+vector<pair<int, string> > v;
 
 int main() {
-	cin >> k >> l;
+    cin >> k >> l;
 
-	for (int i = 0; i < l; i++) {
-		cin >> v[i];
-	}
+    for (int i = 0; i < l; i++) {
+        cin >> s;
+        m[s] = i + 1;
+    }
 
-	for (int i = l - 1; i > -1; i--) {
-		if (table.find(v[i]) == table.end()) {
-			s.push(v[i]);
-			table.insert(v[i]);
-		}
-	}
+    for (map<string, int>::iterator iter = m.begin(); iter != m.end(); iter++) {
+        v.push_back({iter->second, iter->first});
+    }
 
-	for (int i = 0; i < k; i++) {
-		cout << s.top() << endl;
-		s.pop();
-	}
+    sort(v.begin(), v.end());
 
-	return 0;
+    for (int i = 0; i < k; i++) {
+        cout << v[i].second << endl;
+    }
+
+    return 0;
 }
