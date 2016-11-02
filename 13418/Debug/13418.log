@@ -1,4 +1,4 @@
 ﻿  13418.cpp
-d:\github\acm-icpc\13418\13418.cpp(65): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
-d:\github\acm-icpc\13418\13418.cpp(102): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+d:\github\acm-icpc\13418\13418.cpp(66): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+d:\github\acm-icpc\13418\13418.cpp(100): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
   13418.vcxproj -> D:\GitHub\ACM-ICPC\Debug\13418.exe

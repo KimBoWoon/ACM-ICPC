@@ -25,8 +25,9 @@ bool des(const Edge &x, const Edge &y) {
 int SimpleFind(const int i) {
 	int root = i;
 
-	while (up[root] > 0)
+	while (up[root] > 0) {
 		root = up[root];
+	}
 
 	return root;
 }
@@ -81,10 +82,7 @@ int main() {
 
 	scanf("%d %d", &n, &m);
 
-	scanf("%d %d %d", &x, &y, &t);
-	edge.push_back({ x, y, t });
-
-	for (int i = 0; i < m; i++) {
+	for (int i = 0; i <= m; i++) {
 		scanf("%d %d %d", &x, &y, &t);
 		edge.push_back({ x, y, t });
 	}
@@ -92,7 +90,7 @@ int main() {
 	for (int i = 0; i < 2; i++) {
 		sort(edge.begin(), edge.end(), comp[i]);
 
-		for (int j = 0; j < 500000; j++) {
+		for (int j = 0; j <= n; j++) {
 			up[j] = 0;
 			weight[j] = 1;
 		}
