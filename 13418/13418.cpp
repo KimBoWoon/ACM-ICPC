@@ -63,7 +63,7 @@ void Union(const int i, const int j) {
 void Kruskal() {
 	int edgeCnt = 0;
 
-	while (selectEdge.size() < n) {
+	while (selectEdge.size() < n && edge.size() > edgeCnt) {
 		int x = edge[edgeCnt].start, y = edge[edgeCnt].end;
 		int p = SimpleFind(x);
 		int q = SimpleFind(y);
@@ -98,13 +98,15 @@ int main() {
 		Kruskal();
 
 		for (int j = 0; j < selectEdge.size(); j++) {
-			cost[i] += selectEdge[j].weight;
+            if (selectEdge[j].weight == 0) {
+                cost[i]++;
+            }
 		}
 
 		selectEdge.clear();
 	}
 
-	printf("%d\n", (cost[1] * cost[1]) - (cost[0] * cost[0]));
+	printf("%d\n", (cost[0] * cost[0]) - (cost[1] * cost[1]));
 
 	return 0;
 }
