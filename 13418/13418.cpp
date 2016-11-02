@@ -14,11 +14,11 @@ int weight[500000];
 int n, m, x, y, t;
 vector<Edge> edge, selectEdge;
 
-bool comp1(const Edge &x, const Edge &y) {
+bool asc(const Edge &x, const Edge &y) {
 	return x.weight < y.weight;
 }
 
-bool comp2(const Edge &x, const Edge &y) {
+bool des(const Edge &x, const Edge &y) {
 	return x.weight > y.weight;
 }
 
@@ -76,7 +76,7 @@ void Kruskal() {
 }
 
 int main() {
-	bool(*comp[2])(const Edge &, const Edge &) = { comp1, comp2 };
+	bool(*comp[2])(const Edge &, const Edge &) = { asc, des };
 	int cost[2] = { 0 };
 
 	scanf("%d %d", &n, &m);
