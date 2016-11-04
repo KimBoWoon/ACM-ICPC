@@ -18,10 +18,6 @@ bool asc(const Edge &x, const Edge &y) {
 	return x.weight < y.weight;
 }
 
-bool des(const Edge &x, const Edge &y) {
-	return x.weight > y.weight;
-}
-
 int SimpleFind(const int i) {
 	int root = i;
 
