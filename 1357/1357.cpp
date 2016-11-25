@@ -15,5 +15,5 @@ int main() {
 
 	reverse(sum.begin(), sum.end());
 
-	cout << sum << endl;
+	cout << stoi(sum) << endl;
 }
