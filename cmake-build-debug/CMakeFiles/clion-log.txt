@@ -1,0 +1,4 @@
+/home/secret/bin/clion-2016.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/secret/Github/ACM-ICPC
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/secret/Github/ACM-ICPC/cmake-build-debug
