@@ -29,55 +29,65 @@ public:
 
 class Tree {
 private:
-	Node *root;
+	Node *root, *temp;
 public:
-	Tree() : root(NULL) {}
+	Tree() : temp(NULL) {
+		this->root = new Node('A');
+	}
 
 	void insertNode(Node *node, char data, int flag) {
-		if (root == NULL) {
-			root = new Node(data);
+		if (flag == 2) {
+			node->left = new Node(data);
 		}
-		else {
-			if (flag == 2) {
-				node->left = new Node(data);
-			}
-			else if (flag == 3) {
-				node->right = new Node(data);
-			}
+		else if (flag == 3) {
+			node->right = new Node(data);
 		}
 	}
 
 	Node* searchNode(Node *node, char data) {
-		if (root == NULL) {
+		if (node == NULL) {
 			return NULL;
 		}
 		else if (node->data == data) {
-			return node;
+			temp = node;
 		}
 		else {
 			searchNode(node->left, data);
 			searchNode(node->right, data);
 		}
 
-		return NULL;
+		return temp;
 	}
 
 	void preoder(Node *node) {
+		if (node == NULL) {
+			return;
+		}
 		printf("%c", node->data);
 		preoder(node->left);
 		preoder(node->right);
 	}
 
 	void inoder(Node *node) {
-		preoder(node->left);
+		if (node == NULL) {
+			return;
+		}
+		inoder(node->left);
 		printf("%c", node->data);
-		preoder(node->right);
+		inoder(node->right);
 	}
 
 	void postoder(Node *node) {
-		preoder(node->left);
-		preoder(node->right);
+		if (node == NULL) {
+			return;
+		}
+		postoder(node->left);
+		postoder(node->right);
 		printf("%c", node->data);
+	}
+
+	Node* getSearchNode() {
+		return temp;
 	}
 
 	Node* getRootNode() {
@@ -106,11 +116,8 @@ int main() {
 		//scanf("%c %c %c", &a, &b, &c);
 
 		Node *cur = t.searchNode(t.getRootNode(), a);
+		cur = t.getSearchNode();
 
-		if (cur == NULL) {
-			t.insertNode(cur, a, 1);
-		}
-		cur = t.searchNode(t.getRootNode(), a);
 		if (b != '.') {
 			t.insertNode(cur, b, 2);
 		}
@@ -120,6 +127,9 @@ int main() {
 	}
 
 	t.preoder(t.getRootNode());
+	printf("\n");
 	t.inoder(t.getRootNode());
+	printf("\n");
 	t.postoder(t.getRootNode());
+	printf("\n");
 }
