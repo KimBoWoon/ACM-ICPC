@@ -123,59 +123,32 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/build
 .PHONY : ACM_ICPC/fast
 
-10871.o: 10871.cpp.o
+11053.o: 11053.cpp.o
 
-.PHONY : 10871.o
-
-# target to build an object file
-10871.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/10871.cpp.o
-.PHONY : 10871.cpp.o
-
-10871.i: 10871.cpp.i
-
-.PHONY : 10871.i
-
-# target to preprocess a source file
-10871.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/10871.cpp.i
-.PHONY : 10871.cpp.i
-
-10871.s: 10871.cpp.s
-
-.PHONY : 10871.s
-
-# target to generate assembly for a file
-10871.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/10871.cpp.s
-.PHONY : 10871.cpp.s
-
-2558.o: 2558.cpp.o
-
-.PHONY : 2558.o
+.PHONY : 11053.o
 
 # target to build an object file
-2558.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/2558.cpp.o
-.PHONY : 2558.cpp.o
+11053.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/11053.cpp.o
+.PHONY : 11053.cpp.o
 
-2558.i: 2558.cpp.i
+11053.i: 11053.cpp.i
 
-.PHONY : 2558.i
+.PHONY : 11053.i
 
 # target to preprocess a source file
-2558.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/2558.cpp.i
-.PHONY : 2558.cpp.i
+11053.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/11053.cpp.i
+.PHONY : 11053.cpp.i
 
-2558.s: 2558.cpp.s
+11053.s: 11053.cpp.s
 
-.PHONY : 2558.s
+.PHONY : 11053.s
 
 # target to generate assembly for a file
-2558.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/2558.cpp.s
-.PHONY : 2558.cpp.s
+11053.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/11053.cpp.s
+.PHONY : 11053.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ACM_ICPC"
-	@echo "... 10871.o"
-	@echo "... 10871.i"
-	@echo "... 10871.s"
-	@echo "... 2558.o"
-	@echo "... 2558.i"
-	@echo "... 2558.s"
+	@echo "... 11053.o"
+	@echo "... 11053.i"
+	@echo "... 11053.s"
 .PHONY : help
 
 
