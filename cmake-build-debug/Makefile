@@ -150,6 +150,33 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/10871.cpp.s
 .PHONY : 10871.cpp.s
 
+2558.o: 2558.cpp.o
+
+.PHONY : 2558.o
+
+# target to build an object file
+2558.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/2558.cpp.o
+.PHONY : 2558.cpp.o
+
+2558.i: 2558.cpp.i
+
+.PHONY : 2558.i
+
+# target to preprocess a source file
+2558.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/2558.cpp.i
+.PHONY : 2558.cpp.i
+
+2558.s: 2558.cpp.s
+
+.PHONY : 2558.s
+
+# target to generate assembly for a file
+2558.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/2558.cpp.s
+.PHONY : 2558.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... 10871.o"
 	@echo "... 10871.i"
 	@echo "... 10871.s"
+	@echo "... 2558.o"
+	@echo "... 2558.i"
+	@echo "... 2558.s"
 .PHONY : help
 
 

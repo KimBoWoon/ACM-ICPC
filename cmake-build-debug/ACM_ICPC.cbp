@@ -83,6 +83,9 @@
 		<Unit filename="/home/secret/Github/ACM-ICPC/10871.cpp">
 			<Option target="ACM_ICPC"/>
 		</Unit>
+		<Unit filename="/home/secret/Github/ACM-ICPC/2558.cpp">
+			<Option target="ACM_ICPC"/>
+		</Unit>
 		<Unit filename="/home/secret/Github/ACM-ICPC/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
