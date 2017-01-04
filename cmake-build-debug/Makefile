@@ -123,32 +123,32 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/build
 .PHONY : ACM_ICPC/fast
 
-11053.o: 11053.cpp.o
+1924.o: 1924.cpp.o
 
-.PHONY : 11053.o
+.PHONY : 1924.o
 
 # target to build an object file
-11053.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/11053.cpp.o
-.PHONY : 11053.cpp.o
+1924.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/1924.cpp.o
+.PHONY : 1924.cpp.o
 
-11053.i: 11053.cpp.i
+1924.i: 1924.cpp.i
 
-.PHONY : 11053.i
+.PHONY : 1924.i
 
 # target to preprocess a source file
-11053.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/11053.cpp.i
-.PHONY : 11053.cpp.i
+1924.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/1924.cpp.i
+.PHONY : 1924.cpp.i
 
-11053.s: 11053.cpp.s
+1924.s: 1924.cpp.s
 
-.PHONY : 11053.s
+.PHONY : 1924.s
 
 # target to generate assembly for a file
-11053.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/11053.cpp.s
-.PHONY : 11053.cpp.s
+1924.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/1924.cpp.s
+.PHONY : 1924.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ACM_ICPC"
-	@echo "... 11053.o"
-	@echo "... 11053.i"
-	@echo "... 11053.s"
+	@echo "... 1924.o"
+	@echo "... 1924.i"
+	@echo "... 1924.s"
 .PHONY : help
 
 
