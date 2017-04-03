@@ -3,6 +3,6 @@ project(ACM_ICPC)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES 1094.cpp)
+set(SOURCE_FILES 1076.cpp)
 
 add_executable(ACM_ICPC ${SOURCE_FILES})

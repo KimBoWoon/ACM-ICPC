@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/secret/Github/ACM-ICPC/1094.cpp
+/home/secret/Github/ACM-ICPC/1076.cpp
 cstdio
+-
+iostream
+-
+string
+-
+map
 -
 
