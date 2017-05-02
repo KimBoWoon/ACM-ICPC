@@ -26,8 +26,12 @@ int main() {
 	}
 
 	for (int i = 0; i < n; i++) {
-		memset(mark, 0, 101);
+		for (int i = 0; i < n; i++) {
+			mark[i] = 0;
+		}
+
 		dfs(i);
+
 		for (int j = 0; j < n; j++) {
 			result[i][j] = mark[j];
 		}
