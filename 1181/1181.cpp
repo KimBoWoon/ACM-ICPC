@@ -24,6 +24,9 @@ int main() {
 	sort(str, str + n, comp);
 
 	for (int i = 0; i < n; i++) {
+		if (str[i] == str[i + 1]) {
+			continue;
+		}
 		cout << str[i] << endl;
 	}
 }
