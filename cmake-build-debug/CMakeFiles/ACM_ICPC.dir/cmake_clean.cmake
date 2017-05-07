@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ACM_ICPC.dir/1076.cpp.o"
+  "CMakeFiles/ACM_ICPC.dir/3047.cpp.o"
   "ACM_ICPC.pdb"
   "ACM_ICPC"
 )

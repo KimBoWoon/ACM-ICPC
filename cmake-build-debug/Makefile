@@ -123,32 +123,32 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/build
 .PHONY : ACM_ICPC/fast
 
-1076.o: 1076.cpp.o
+3047.o: 3047.cpp.o
 
-.PHONY : 1076.o
+.PHONY : 3047.o
 
 # target to build an object file
-1076.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/1076.cpp.o
-.PHONY : 1076.cpp.o
+3047.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/3047.cpp.o
+.PHONY : 3047.cpp.o
 
-1076.i: 1076.cpp.i
+3047.i: 3047.cpp.i
 
-.PHONY : 1076.i
+.PHONY : 3047.i
 
 # target to preprocess a source file
-1076.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/1076.cpp.i
-.PHONY : 1076.cpp.i
+3047.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/3047.cpp.i
+.PHONY : 3047.cpp.i
 
-1076.s: 1076.cpp.s
+3047.s: 3047.cpp.s
 
-.PHONY : 1076.s
+.PHONY : 3047.s
 
 # target to generate assembly for a file
-1076.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/1076.cpp.s
-.PHONY : 1076.cpp.s
+3047.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/3047.cpp.s
+.PHONY : 3047.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ACM_ICPC"
-	@echo "... 1076.o"
-	@echo "... 1076.i"
-	@echo "... 1076.s"
+	@echo "... 3047.o"
+	@echo "... 3047.i"
+	@echo "... 3047.s"
 .PHONY : help
 
 
