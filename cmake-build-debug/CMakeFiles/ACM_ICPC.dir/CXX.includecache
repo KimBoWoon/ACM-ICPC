@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/secret/Github/ACM-ICPC/3047.cpp
-algorithm
--
+/home/secret/Github/ACM-ICPC/10799.cpp
 iostream
+-
+stack
+-
+string
 -
 
