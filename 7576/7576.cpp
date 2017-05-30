@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <queue>
+#include <algorithm>
 using namespace std;
 
 typedef struct Point {
@@ -20,16 +21,29 @@ void bfs() {
 			int nx = px + dx[i];
 			int ny = py + dy[i];
 
-			if (nx > 0 && nx < n && ny > 0 && ny < m) {
-				if (map[ny][nx] == 0) {
-					q.push({ ny, nx });
-					visit[ny][nx] = 1;
-
+			if (nx > -1 && nx < m && ny > -1 && ny < n) {
+				if (visit[nx][ny] == 0) {
+					q.push({ nx, ny });
+					visit[nx][ny] = visit[px][py] + 1;
 				}
 			}
 		}
-		ans++;
 	}
+}
+
+bool check() {
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			if (visit[i][j] == 0) {
+				return false;
+			}
+			else {
+				ans = max(ans, visit[i][j]);
+			}
+		}
+	}
+
+	return true;
 }
 
 int main() {
@@ -38,18 +52,37 @@ int main() {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
 			scanf("%d", &map[i][j]);
-		}
-	}
-
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < n; j++) {
+			visit[i][j] = map[i][j];
 			if (map[i][j] == 1) {
-				q.push({ j, i });
+				q.push({ i, j });
 				visit[i][j] = 1;
-				bfs();
 			}
 		}
 	}
 
-	printf("%d\n", ans);
+	/*for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			if (map[i][j] == 1) {
+				q.push({ i, j });
+				visit[i][j] = 1;
+				bfs();
+			}
+		}
+	}*/
+
+	bfs();
+
+	/*for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			printf("%d ", visit[i][j]);
+		}
+		printf("\n");
+	}*/
+
+	if (!check()) {
+		printf("-1\n");
+	}
+	else {
+		printf("%d\n", ans - 1);
+	}
 }
