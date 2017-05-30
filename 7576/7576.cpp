@@ -72,12 +72,12 @@ int main() {
 
 	bfs();
 
-	/*for (int i = 0; i < m; i++) {
+	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
 			printf("%d ", visit[i][j]);
 		}
 		printf("\n");
-	}*/
+	}
 
 	if (!check()) {
 		printf("-1\n");

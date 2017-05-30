@@ -1,0 +1,7 @@
+﻿  2667.cpp
+d:\github\acm-icpc\2667\2667.cpp(35): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
+d:\github\acm-icpc\2667\2667.cpp(39): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
+  2667.vcxproj -> D:\Github\ACM-ICPC\Debug\2667.exe
+  2667.vcxproj -> D:\Github\ACM-ICPC\Debug\2667.pdb (Partial PDB)
