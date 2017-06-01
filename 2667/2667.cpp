@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <queue>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 typedef struct Point {
@@ -51,6 +52,7 @@ int main() {
 		for (int j = 0; j < n; j++) {
 			if (map[i][j] == 1) {
 				q.push({ i, j });
+				map[i][j] = 0;
 				visit[i][j] = 1;
 				bfs();
 				cnt++;
@@ -58,20 +60,17 @@ int main() {
 		}
 	}
 
-	for (int i = 0; i < n; i++) {
+	/*for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			printf("%d ", visit[i][j]);
 		}
 		printf("\n");
-	}
+	}*/
+
+	sort(v.begin(), v.end());
 
 	printf("%d\n", v.size());
 	for (int i = 0; i < v.size(); i++) {
-		if (v[i] == 0) {
-			printf("1\n");
-		}
-		else {
-			printf("%d\n", v[i] - 1);
-		}
+		printf("%d\n", v[i] - 1);
 	}
 }
