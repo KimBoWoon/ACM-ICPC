@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <queue>
 #include <algorithm>
+#include <cstring>
 using namespace std;
 
 typedef struct Point {
@@ -22,13 +23,9 @@ void bfs() {
 			int nx = px + dx[i];
 			int ny = py + dy[i];
 
-			if (nx > -1 && nx < n && ny > -1 && ny < n) {
+			if (nx > -1 && nx < n && ny > -1 && ny < n && !map[nx][ny]) {
 				q.push({ nx, ny });
 				map[nx][ny] = map[px][py] + 1;
-
-				if (nx == destination.x && ny == destination.y) {
-					return;
-				}
 			}
 		}
 	}
@@ -44,16 +41,11 @@ int main() {
 		scanf("%d %d", &source.x, &source.y);
 		scanf("%d %d", &destination.x, &destination.y);
 
+		memset(map, 0, sizeof(int) * 301 * 301);
+		map[source.x][source.y] = 1;
 		q.push(source);
 		bfs();
 
-		/*for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				printf("%d ", map[i][j]);
-			}
-			printf("\n");
-		}*/
-
-		printf("%d\n", ans);
+		printf("%d\n", map[destination.x][destination.y] - 1);
 	}
 }
