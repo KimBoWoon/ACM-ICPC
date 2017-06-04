@@ -18,6 +18,6 @@ int main() {
 			i++;
 		}
 	}
-
+	
 	printf("%d\n", ans);
 }
