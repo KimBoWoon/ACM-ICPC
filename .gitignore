@@ -39,4 +39,5 @@
 *.suo
 *.v12.suo
 ./CMakeLists.txt
-ACM-ICPC.VC.VC.opendb
+ACM-ICPC.VC.opendb
+./.vs/*
