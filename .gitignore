@@ -40,4 +40,4 @@
 *.v12.suo
 ./CMakeLists.txt
 ACM-ICPC.VC.opendb
-./.vs/*
+.vs/*
