@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/secret/Github/ACM-ICPC/10799.cpp" "/home/secret/Github/ACM-ICPC/cmake-build-debug/CMakeFiles/ACM_ICPC.dir/10799.cpp.o"
+  "/home/secret/Github/ACM-ICPC/ACM-ICPC/1699.cpp" "/home/secret/Github/ACM-ICPC/cmake-build-debug/CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1699.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
