@@ -123,32 +123,32 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/build
 .PHONY : ACM_ICPC/fast
 
-ACM-ICPC/practice.o: ACM-ICPC/practice.cpp.o
+ACM-ICPC/1309.o: ACM-ICPC/1309.cpp.o
 
-.PHONY : ACM-ICPC/practice.o
+.PHONY : ACM-ICPC/1309.o
 
 # target to build an object file
-ACM-ICPC/practice.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/practice.cpp.o
-.PHONY : ACM-ICPC/practice.cpp.o
+ACM-ICPC/1309.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1309.cpp.o
+.PHONY : ACM-ICPC/1309.cpp.o
 
-ACM-ICPC/practice.i: ACM-ICPC/practice.cpp.i
+ACM-ICPC/1309.i: ACM-ICPC/1309.cpp.i
 
-.PHONY : ACM-ICPC/practice.i
+.PHONY : ACM-ICPC/1309.i
 
 # target to preprocess a source file
-ACM-ICPC/practice.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/practice.cpp.i
-.PHONY : ACM-ICPC/practice.cpp.i
+ACM-ICPC/1309.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1309.cpp.i
+.PHONY : ACM-ICPC/1309.cpp.i
 
-ACM-ICPC/practice.s: ACM-ICPC/practice.cpp.s
+ACM-ICPC/1309.s: ACM-ICPC/1309.cpp.s
 
-.PHONY : ACM-ICPC/practice.s
+.PHONY : ACM-ICPC/1309.s
 
 # target to generate assembly for a file
-ACM-ICPC/practice.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/practice.cpp.s
-.PHONY : ACM-ICPC/practice.cpp.s
+ACM-ICPC/1309.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1309.cpp.s
+.PHONY : ACM-ICPC/1309.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ACM_ICPC"
-	@echo "... ACM-ICPC/practice.o"
-	@echo "... ACM-ICPC/practice.i"
-	@echo "... ACM-ICPC/practice.s"
+	@echo "... ACM-ICPC/1309.o"
+	@echo "... ACM-ICPC/1309.i"
+	@echo "... ACM-ICPC/1309.s"
 .PHONY : help
 
 

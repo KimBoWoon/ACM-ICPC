@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/secret/Github/ACM-ICPC/ACM-ICPC/practice.cpp
-stdio.h
+/home/secret/Github/ACM-ICPC/ACM-ICPC/1309.cpp
+cstdio
 -
 
