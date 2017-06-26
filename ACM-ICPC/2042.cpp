@@ -49,10 +49,15 @@
 
 #include <cstdio>
 #include <cmath>
+#include <vector>
+using namespace std;
+
+#define MAX_SIZE 1000001
 
 typedef long long LLONG;
 int n, m, k, h, tree_size;
-LLONG tree[1000010], arr[1000010];
+LLONG tree[MAX_SIZE], arr[MAX_SIZE];
+// vector<LLONG> tree, arr;
 
 LLONG init(int node, int start, int end) {
     if (start == end) {
@@ -96,8 +101,11 @@ LLONG sum(int node, int start, int end, int left, int right) {
 int main() {
     scanf("%d %d %d", &n, &m, &k);
 
-//    h = (int) ceil(log2(n));
-//    tree_size = (1 << (h + 1));
+    // h = (int) ceil(log2(n));
+    // tree_size = (1 << (h + 1));
+
+	// tree.resize(tree_size + 1);
+	// arr.resize(n + 1);
 
     for (int i = 0; i < n; i++) {
         scanf("%lld", &arr[i]);
