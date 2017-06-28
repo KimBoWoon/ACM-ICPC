@@ -6,7 +6,7 @@ int main() {
 	scanf("%d", &t);
 
 	while (t--) {
-		int d[101];
+		int d[101] = { 0 };
 
 		scanf("%d", &n);
 
