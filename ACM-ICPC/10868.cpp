@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-#define MAX_SIZE 100001
+#define MAX_SIZE 400001
 #define INF 1000000001
 
 int n, m, a, b;

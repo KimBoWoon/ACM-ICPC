@@ -52,91 +52,90 @@
 #include <vector>
 using namespace std;
 
-#define MAX_SIZE 1000001
-
 typedef long long LLONG;
 int n, m, k, h, tree_size;
-LLONG tree[MAX_SIZE], arr[MAX_SIZE];
+LLONG tree[4000010], arr[4000010];
 // vector<LLONG> tree, arr;
 
 LLONG init(int node, int start, int end) {
-    if (start == end) {
-        return tree[node] = arr[start];
-    }
+	if (start == end) {
+		return tree[node] = arr[start];
+	}
 
-    int mid = (start + end) / 2;
+	int mid = (start + end) / 2;
 
-    return tree[node] = init(node * 2, start, mid) + init(node * 2 + 1, mid + 1, end);
+	return tree[node] = init(node * 2, start, mid) + init(node * 2 + 1, mid + 1, end);
 }
 
 void update(int node, int start, int end, int index, LLONG diff) {
-    if (!(start <= index && index <= end)) {
-        return;
-    }
+	if (!(start <= index && index <= end)) {
+		return;
+	}
 
-    tree[node] += diff;
+	tree[node] += diff;
 
-    if (start != end) {
-        int mid = (start + end) / 2;
+	if (start != end) {
+		int mid = (start + end) / 2;
 
-        update(node * 2, start, mid, index, diff);
-        update(node * 2 + 1, mid + 1, end, index, diff);
-    }
+		update(node * 2, start, mid, index, diff);
+		update(node * 2 + 1, mid + 1, end, index, diff);
+	}
 }
 
 LLONG sum(int node, int start, int end, int left, int right) {
-    if (left > end || right < start) {
-        return 0;
-    }
+	if (left > end || right < start) {
+		return 0;
+	}
 
-    if (left <= start && end <= right) {
-        return tree[node];
-    }
+	if (left <= start && end <= right) {
+		return tree[node];
+	}
 
-    int mid = (start + end) / 2;
+	int mid = (start + end) / 2;
 
-    return sum(node * 2, start, mid, left, right) + sum(node * 2 + 1, mid + 1, end, left, right);
+	return sum(node * 2, start, mid, left, right) + sum(node * 2 + 1, mid + 1, end, left, right);
 }
 
 int main() {
-    scanf("%d %d %d", &n, &m, &k);
+	scanf("%d %d %d", &n, &m, &k);
 
-    // h = (int) ceil(log2(n));
-    // tree_size = (1 << (h + 1));
+	// h = (int) ceil(log2(n));
+	// tree_size = (1 << (h + 1));
 
 	// tree.resize(tree_size + 1);
 	// arr.resize(n + 1);
 
-    for (int i = 0; i < n; i++) {
-        scanf("%lld", &arr[i]);
-    }
+	for (int i = 0; i < n; i++) {
+		scanf("%lld", &arr[i]);
+	}
 
-    init(1, 0, n - 1);
+	init(1, 0, n - 1);
 
-    for (int i = 0; i < m + k; i++) {
-        int a;
+	for (int i = 0; i < m + k; i++) {
+		int a;
 
-        scanf("%d", &a);
+		scanf("%d", &a);
 
-        if (a == 1) {
-            int b;
-            LLONG c;
-            scanf("%d %lld", &b, &c);
-            update(1, 0, n - 1, b - 1, c - arr[b - 1]);
-            arr[b - 1] = c;
-        } else if (a == 2) {
-            int b, c;
-            scanf("%d %d", &b, &c);
-            printf("%lld\n", sum(1, 0, n - 1, b - 1, c - 1));
-        }
+		if (a == 1) {
+			int b;
+			LLONG c;
+			scanf("%d %lld", &b, &c);
+			update(1, 0, n - 1, b - 1, c - arr[b - 1]);
+			arr[b - 1] = c;
+		}
+		else if (a == 2) {
+			int b, c;
+			scanf("%d %d", &b, &c);
+			printf("%lld\n", sum(1, 0, n - 1, b - 1, c - 1));
+		}
 
-//        for (int k = 0; k < n; k++) {
-//            printf("%lld ", arr[k]);
-//        }
-//        printf("\n");
-//        for (int k = 1; k <= tree_size; k++) {
-//            printf("%lld ", tree[k]);
-//        }
-//        printf("\n");
-    }
+		//        for (int k = 0; k < n; k++) {
+		//            printf("%lld ", arr[k]);
+		//        }
+		//        printf("\n");
+		//        for (int k = 1; k <= tree_size; k++) {
+		//            printf("%lld ", tree[k]);
+		//        }
+		//        printf("\n");
+	}
 }
