@@ -1,1 +1,1 @@
-/usr/bin/c++    -std=c++11 -g   CMakeFiles/ACM_ICPC.dir/ACM-ICPC/10886.cpp.o  -o ACM_ICPC 
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/ACM_ICPC.dir/ACM-ICPC/11722.cpp.o  -o ACM_ICPC 
