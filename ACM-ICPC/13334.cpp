@@ -1,44 +1,42 @@
-#include <cstdlib>
-#include <cstdio>
-#include <algorithm>
-#include <cmath>
-#include <vector>
+#include<cstdio>
+#include<algorithm>
 using namespace std;
 
-#pragma warning(disable:4996)
-
-typedef struct point {
-	int start, end;
-} Point;
-
-bool comp(const Point &p1, const Point &p2) {
-	if (p1.start == p2.start)
-		return p1.end < p2.end;
-	return p1.start < p2.start;
-}
-
-Point v[100001];
+int x[100000], y[100000], cnt, s, r, n, d;
+pair<int, int> p[200000];
 
 int main() {
-	int n = 0, d = 0, cnt = 0;
-
 	scanf("%d", &n);
 
-	for (int i = 0; i < n; ++i) {
-		scanf("%d %d", &v[i].start, &v[i].end);
-		if (v[i].start > v[i].end)
-			swap(v[i].start, v[i].end);
+	for (int i = 0; i < n; i++) {
+		scanf("%d%d", x + i, y + i);
 	}
-
-	sort(v, v + n, comp);
 
 	scanf("%d", &d);
 
-	for (int i = 0; i < n; ++i) {
-		if (v[i].end - d) {
+	for (int i = 0; i < n; i++) {
+		if (x[i] > y[i]) {
+			swap(x[i], y[i]);
+		}
 
+		if (y[i] - x[i] > d) {
+			continue;
+		}
+
+		p[cnt++] = { y[i] - d,-1 };
+		p[cnt++] = { x[i],1 };
+	}
+
+	sort(p, p + cnt);
+
+	for (int i = 0; i < cnt; i++) {
+		s -= p[i].second;
+		if (r < s) {
+			r = s;
 		}
 	}
 
-	printf("%d\n", cnt);
+	printf("%d\n", r);
+
+	return 0;
 }
