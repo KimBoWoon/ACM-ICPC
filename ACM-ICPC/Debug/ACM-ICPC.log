@@ -1,7 +1,5 @@
-﻿  10886.cpp
-f:\github\acm-icpc\acm-icpc\10886.cpp(6): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-f:\github\acm-icpc\acm-icpc\10886.cpp(11): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  1977.cpp
+f:\github\acm-icpc\acm-icpc\1977.cpp(8): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
   ACM-ICPC.vcxproj -> F:\GitHub\ACM-ICPC\Debug\ACM-ICPC.exe
   ACM-ICPC.vcxproj -> F:\GitHub\ACM-ICPC\Debug\ACM-ICPC.pdb (Partial PDB)
