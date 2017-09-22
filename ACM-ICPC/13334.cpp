@@ -1,5 +1,5 @@
-#include<cstdio>
-#include<algorithm>
+#include <cstdio>
+#include <algorithm>
 using namespace std;
 
 int x[100000], y[100000], cnt, s, r, n, d;
@@ -9,7 +9,7 @@ int main() {
 	scanf("%d", &n);
 
 	for (int i = 0; i < n; i++) {
-		scanf("%d%d", x + i, y + i);
+		scanf("%d %d", x + i, y + i);
 	}
 
 	scanf("%d", &d);
@@ -23,8 +23,8 @@ int main() {
 			continue;
 		}
 
-		p[cnt++] = { y[i] - d,-1 };
-		p[cnt++] = { x[i],1 };
+		p[cnt++] = { y[i] - d, -1 };
+		p[cnt++] = { x[i], 1 };
 	}
 
 	sort(p, p + cnt);
