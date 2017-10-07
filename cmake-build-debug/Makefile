@@ -123,32 +123,32 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/build
 .PHONY : ACM_ICPC/fast
 
-ACM-ICPC/12790.o: ACM-ICPC/12790.cpp.o
+ACM-ICPC/4811.o: ACM-ICPC/4811.cpp.o
 
-.PHONY : ACM-ICPC/12790.o
+.PHONY : ACM-ICPC/4811.o
 
 # target to build an object file
-ACM-ICPC/12790.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/12790.cpp.o
-.PHONY : ACM-ICPC/12790.cpp.o
+ACM-ICPC/4811.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4811.cpp.o
+.PHONY : ACM-ICPC/4811.cpp.o
 
-ACM-ICPC/12790.i: ACM-ICPC/12790.cpp.i
+ACM-ICPC/4811.i: ACM-ICPC/4811.cpp.i
 
-.PHONY : ACM-ICPC/12790.i
+.PHONY : ACM-ICPC/4811.i
 
 # target to preprocess a source file
-ACM-ICPC/12790.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/12790.cpp.i
-.PHONY : ACM-ICPC/12790.cpp.i
+ACM-ICPC/4811.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4811.cpp.i
+.PHONY : ACM-ICPC/4811.cpp.i
 
-ACM-ICPC/12790.s: ACM-ICPC/12790.cpp.s
+ACM-ICPC/4811.s: ACM-ICPC/4811.cpp.s
 
-.PHONY : ACM-ICPC/12790.s
+.PHONY : ACM-ICPC/4811.s
 
 # target to generate assembly for a file
-ACM-ICPC/12790.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/12790.cpp.s
-.PHONY : ACM-ICPC/12790.cpp.s
+ACM-ICPC/4811.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4811.cpp.s
+.PHONY : ACM-ICPC/4811.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ACM_ICPC"
-	@echo "... ACM-ICPC/12790.o"
-	@echo "... ACM-ICPC/12790.i"
-	@echo "... ACM-ICPC/12790.s"
+	@echo "... ACM-ICPC/4811.o"
+	@echo "... ACM-ICPC/4811.i"
+	@echo "... ACM-ICPC/4811.s"
 .PHONY : help
 
 
