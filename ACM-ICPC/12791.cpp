@@ -4,8 +4,8 @@
 using namespace std;
 
 int n, x, y;
-vector<pair<int, string>> v;
-vector<pair<int, string>> ans;
+vector<pair<int, string> > v;
+vector<pair<int, string> > ans;
 
 int main() {
 	v.push_back({ 1967, "DavidBowie" });
