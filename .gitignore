@@ -41,3 +41,6 @@
 ./CMakeLists.txt
 ACM-ICPC.VC.opendb
 .vs/*
+
+# makefile
+CMakeLists.txt
