@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="11652.cpp" />
+    <ClCompile Include="1890.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
