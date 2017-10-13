@@ -123,32 +123,32 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/build
 .PHONY : ACM_ICPC/fast
 
-ACM-ICPC/1874.o: ACM-ICPC/1874.cpp.o
+ACM-ICPC/11054.o: ACM-ICPC/11054.cpp.o
 
-.PHONY : ACM-ICPC/1874.o
+.PHONY : ACM-ICPC/11054.o
 
 # target to build an object file
-ACM-ICPC/1874.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1874.cpp.o
-.PHONY : ACM-ICPC/1874.cpp.o
+ACM-ICPC/11054.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/11054.cpp.o
+.PHONY : ACM-ICPC/11054.cpp.o
 
-ACM-ICPC/1874.i: ACM-ICPC/1874.cpp.i
+ACM-ICPC/11054.i: ACM-ICPC/11054.cpp.i
 
-.PHONY : ACM-ICPC/1874.i
+.PHONY : ACM-ICPC/11054.i
 
 # target to preprocess a source file
-ACM-ICPC/1874.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1874.cpp.i
-.PHONY : ACM-ICPC/1874.cpp.i
+ACM-ICPC/11054.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/11054.cpp.i
+.PHONY : ACM-ICPC/11054.cpp.i
 
-ACM-ICPC/1874.s: ACM-ICPC/1874.cpp.s
+ACM-ICPC/11054.s: ACM-ICPC/11054.cpp.s
 
-.PHONY : ACM-ICPC/1874.s
+.PHONY : ACM-ICPC/11054.s
 
 # target to generate assembly for a file
-ACM-ICPC/1874.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1874.cpp.s
-.PHONY : ACM-ICPC/1874.cpp.s
+ACM-ICPC/11054.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/11054.cpp.s
+.PHONY : ACM-ICPC/11054.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ACM_ICPC"
-	@echo "... ACM-ICPC/1874.o"
-	@echo "... ACM-ICPC/1874.i"
-	@echo "... ACM-ICPC/1874.s"
+	@echo "... ACM-ICPC/11054.o"
+	@echo "... ACM-ICPC/11054.i"
+	@echo "... ACM-ICPC/11054.s"
 .PHONY : help
 
 
