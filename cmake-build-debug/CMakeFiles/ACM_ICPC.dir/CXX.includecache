@@ -6,12 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/home/null/Github/ACM-ICPC/ACM-ICPC/1764.cpp
-iostream
--
-string
--
-vector
+/home/null/Github/ACM-ICPC/ACM-ICPC/4948.cpp
+cstdio
 -
 algorithm
 -
