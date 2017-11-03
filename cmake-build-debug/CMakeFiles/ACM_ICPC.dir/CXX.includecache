@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/null/Github/ACM-ICPC/ACM-ICPC/9660.cpp
+/home/null/Github/ACM-ICPC/ACM-ICPC/11399.cpp
 cstdio
+-
+algorithm
 -
 
