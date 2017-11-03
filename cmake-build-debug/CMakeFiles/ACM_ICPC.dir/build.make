@@ -57,38 +57,38 @@ include CMakeFiles/ACM_ICPC.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ACM_ICPC.dir/flags.make
 
-CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o: CMakeFiles/ACM_ICPC.dir/flags.make
-CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o: ../ACM-ICPC/4948.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/null/Github/ACM-ICPC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o -c /home/null/Github/ACM-ICPC/ACM-ICPC/4948.cpp
+CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o: CMakeFiles/ACM_ICPC.dir/flags.make
+CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o: ../ACM-ICPC/9660.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/null/Github/ACM-ICPC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o -c /home/null/Github/ACM-ICPC/ACM-ICPC/9660.cpp
 
-CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/null/Github/ACM-ICPC/ACM-ICPC/4948.cpp > CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.i
+CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/null/Github/ACM-ICPC/ACM-ICPC/9660.cpp > CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.i
 
-CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/null/Github/ACM-ICPC/ACM-ICPC/4948.cpp -o CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.s
+CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/null/Github/ACM-ICPC/ACM-ICPC/9660.cpp -o CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.s
 
-CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.requires:
+CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.requires:
 
-.PHONY : CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.requires
+.PHONY : CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.requires
 
-CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.provides: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.requires
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.provides.build
-.PHONY : CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.provides
+CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.provides: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.provides.build
+.PHONY : CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.provides
 
-CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.provides.build: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o
+CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.provides.build: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o
 
 
 # Object files for target ACM_ICPC
 ACM_ICPC_OBJECTS = \
-"CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o"
+"CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o"
 
 # External object files for target ACM_ICPC
 ACM_ICPC_EXTERNAL_OBJECTS =
 
-ACM_ICPC: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o
+ACM_ICPC: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o
 ACM_ICPC: CMakeFiles/ACM_ICPC.dir/build.make
 ACM_ICPC: CMakeFiles/ACM_ICPC.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/null/Github/ACM-ICPC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ACM_ICPC"
@@ -99,7 +99,7 @@ CMakeFiles/ACM_ICPC.dir/build: ACM_ICPC
 
 .PHONY : CMakeFiles/ACM_ICPC.dir/build
 
-CMakeFiles/ACM_ICPC.dir/requires: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/4948.cpp.o.requires
+CMakeFiles/ACM_ICPC.dir/requires: CMakeFiles/ACM_ICPC.dir/ACM-ICPC/9660.cpp.o.requires
 
 .PHONY : CMakeFiles/ACM_ICPC.dir/requires
 
