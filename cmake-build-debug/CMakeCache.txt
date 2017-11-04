@@ -184,6 +184,12 @@ ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 
+//Value Computed by CMake
+Project_BINARY_DIR:STATIC=/home/null/Github/ACM-ICPC/cmake-build-debug
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=/home/null/Github/ACM-ICPC
+
 
 ########################
 # INTERNAL cache entries

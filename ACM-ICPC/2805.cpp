@@ -1,44 +1,55 @@
+#define LOCAL
+
 #include <cstdio>
 #include <cstdlib>
 #include <algorithm>
+
 using namespace std;
 
 #pragma warning(disable:4996)
 
 typedef unsigned long long ULLONG;
 
+ULLONG n, m;
+ULLONG arr[1000001];
+
 int main() {
-	ULLONG n, m;
-	ULLONG *arr;
+#ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+#endif
+    scanf("%lld %lld", &n, &m);
 
-	scanf("%lld %lld", &n, &m);
+    for (int i = 0; i < n; i++) {
+        scanf("%lld", &arr[i]);
+    }
 
-	arr = (ULLONG*)calloc(n, sizeof(ULLONG));
+    // sort for use binary search
+    sort(arr, arr + n);
 
-	for (int i = 0; i < n; i++)
-		scanf("%d", &arr[i]);
+    ULLONG h = 0, start = 0, end = arr[n - 1];
 
-	sort(arr, arr + n);
+    // using binary search to find median
+    while (start + 1 < end) {
+        ULLONG sum = 0;
+        h = (start + end) / 2;
 
-	ULLONG h = 0, start = 0, end = arr[n - 1];
+        // cut the tree
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > h) {
+                sum += arr[i] - h;
+            }
+        }
 
-	while (start + 1 < end) {
-		ULLONG sum = 0;
-		h = (start + end) / 2;
+        // find target(m)
+        if (sum == m) {
+            start = h;
+            break;
+        } else if (sum > m) {
+            start = h;
+        } else {
+            end = h;
+        }
+    }
 
-		for (int i = 0; i < n; i++) {
-			if (arr[i] > h) {
-				sum += arr[i] - h;
-			}
-		}
-
-		if (sum >= m) {
-			start = h;
-		}
-		else {
-			end = h;
-		}
-	}
-
-	printf("%d\n", start);
+    printf("%lld\n", start);
 }
