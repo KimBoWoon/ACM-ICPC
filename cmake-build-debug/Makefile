@@ -123,32 +123,32 @@ ACM_ICPC/fast:
 	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/build
 .PHONY : ACM_ICPC/fast
 
-ACM-ICPC/5597.o: ACM-ICPC/5597.cpp.o
+ACM-ICPC/1964.o: ACM-ICPC/1964.cpp.o
 
-.PHONY : ACM-ICPC/5597.o
+.PHONY : ACM-ICPC/1964.o
 
 # target to build an object file
-ACM-ICPC/5597.cpp.o:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/5597.cpp.o
-.PHONY : ACM-ICPC/5597.cpp.o
+ACM-ICPC/1964.cpp.o:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1964.cpp.o
+.PHONY : ACM-ICPC/1964.cpp.o
 
-ACM-ICPC/5597.i: ACM-ICPC/5597.cpp.i
+ACM-ICPC/1964.i: ACM-ICPC/1964.cpp.i
 
-.PHONY : ACM-ICPC/5597.i
+.PHONY : ACM-ICPC/1964.i
 
 # target to preprocess a source file
-ACM-ICPC/5597.cpp.i:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/5597.cpp.i
-.PHONY : ACM-ICPC/5597.cpp.i
+ACM-ICPC/1964.cpp.i:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1964.cpp.i
+.PHONY : ACM-ICPC/1964.cpp.i
 
-ACM-ICPC/5597.s: ACM-ICPC/5597.cpp.s
+ACM-ICPC/1964.s: ACM-ICPC/1964.cpp.s
 
-.PHONY : ACM-ICPC/5597.s
+.PHONY : ACM-ICPC/1964.s
 
 # target to generate assembly for a file
-ACM-ICPC/5597.cpp.s:
-	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/5597.cpp.s
-.PHONY : ACM-ICPC/5597.cpp.s
+ACM-ICPC/1964.cpp.s:
+	$(MAKE) -f CMakeFiles/ACM_ICPC.dir/build.make CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1964.cpp.s
+.PHONY : ACM-ICPC/1964.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ACM_ICPC"
-	@echo "... ACM-ICPC/5597.o"
-	@echo "... ACM-ICPC/5597.i"
-	@echo "... ACM-ICPC/5597.s"
+	@echo "... ACM-ICPC/1964.o"
+	@echo "... ACM-ICPC/1964.i"
+	@echo "... ACM-ICPC/1964.s"
 .PHONY : help
 
 
