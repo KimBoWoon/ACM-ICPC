@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/ACM_ICPC.dir/ACM-ICPC/2965.cpp.o  -o ACM_ICPC 
+/usr/bin/c++  -g   CMakeFiles/ACM_ICPC.dir/ACM-ICPC/1389.cpp.o  -o ACM_ICPC 
