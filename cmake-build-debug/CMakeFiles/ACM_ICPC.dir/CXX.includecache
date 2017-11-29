@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/null/Github/ACM-ICPC/ACM-ICPC/3034.cpp
-cstdio
+/home/null/Github/ACM-ICPC/ACM-ICPC/2935.cpp
+iostream
+-
+string
+-
+cmath
 -
 
