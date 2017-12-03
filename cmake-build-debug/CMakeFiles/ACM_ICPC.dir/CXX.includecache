@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/null/Github/ACM-ICPC/ACM-ICPC/2935.cpp
+/home/null/Github/ACM-ICPC/ACM-ICPC/1159.cpp
 iostream
 -
 string
 -
-cmath
+algorithm
 -
 
