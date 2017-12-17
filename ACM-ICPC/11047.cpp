@@ -13,6 +13,7 @@ int main() {
 		scanf("%d", &coin[i]);
 	}
 
+	// 가장 큰 금액 부터 바꿔주면 최소 개수를 구할 수 있다.
 	for (int i = n; i; i--) {
 		if (coin[i] <= k) {
 			k -= coin[i++];
