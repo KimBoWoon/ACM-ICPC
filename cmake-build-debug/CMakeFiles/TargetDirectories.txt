@@ -1,3 +1,0 @@
-/home/null/Github/ACM-ICPC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/null/Github/ACM-ICPC/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/null/Github/ACM-ICPC/cmake-build-debug/CMakeFiles/ACM_ICPC.dir
