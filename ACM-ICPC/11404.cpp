@@ -3,6 +3,8 @@ using namespace std;
 
 #pragma warning(disable:4996)
 
+#define MAX_COST 999999999
+
 int arr[101][101], c[101][101];
 
 void Floyd(int arr[101][101], int start, int end) {
@@ -25,17 +27,17 @@ int main() {
 	for (int x = 0; x < 101; x++) {
 		for (int y = 0; y < 101; y++) {
 			if (x - y) {
-				arr[x][y] = 999999999;
+				arr[x][y] = MAX_COST;
 			}
 		}
 	}
 
 	for (int i = 0; i < m; i++) {
 		int x, y, c;
-		scanf("%d %d", &x, &y);
-		scanf("%d", &c);
-		if (arr[x][y] > c)
+		scanf("%d %d %d", &x, &y, &c);
+		if (arr[x][y] > c) {
 			arr[x][y] = c;
+		}
 	}
 
 	for (int i = 1; i <= n; i++) {
@@ -46,10 +48,14 @@ int main() {
 
 	Floyd(arr, 1, n);
 
-	for (int i = 1; i <= n; i++)
-	{
+	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
-			printf("%d ", c[i][j]);
+			if (c[i][j] == MAX_COST) {
+				printf("0 ");
+			}
+			else {
+				printf("%d ", c[i][j]);
+			}
 		}
 		printf("\n");
 	}
