@@ -1,0 +1,13 @@
+#include<cstdio>
+
+int n, r;
+
+int main() {
+	scanf("%d", &n);
+
+	for (int i = 1; i <= n; i *= 10) {
+		r += n - i + 1;
+	}
+
+	printf("%d\n", r);
+}
