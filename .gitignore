@@ -44,3 +44,6 @@ ACM-ICPC.VC.opendb
 
 # makefile
 CMakeLists.txt
+
+# vscode
+./vscode
