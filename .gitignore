@@ -47,3 +47,6 @@ CMakeLists.txt
 
 # vscode
 .vscode
+
+# input fild
+input.txt
