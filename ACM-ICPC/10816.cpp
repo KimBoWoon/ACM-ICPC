@@ -1,28 +1,46 @@
 #include <cstdio>
 #include <algorithm>
-#include <map>
 using namespace std;
 
-#pragma warning(disable:4996)
+int n, m;
+int card[500001];
 
-int n;
-map<int, int> m;
+int search(int start, int end, int count, int target) {
+	int mid = (start + end) / 2;
+	int result = 0;
+
+	if (start > end) {
+		return count;
+	} else {
+		if (card[mid] > target) {
+			result = search(start, mid - 1, count, target);
+		} else if (card[mid] < target) {
+			result = search(mid + 1, end, count, target);
+		} else {
+			result += search(start, mid - 1, count, target);
+			result += search(mid + 1, end, count, target);
+			result += 1;
+		}
+
+		return result;
+	}
+}
 
 int main() {
 	scanf("%d", &n);
 
 	for (int i = 0; i < n; i++) {
-		int x;
-		scanf("%d", &x);
-		m[x]++;
+		scanf("%d", &card[i]);
 	}
 
-	scanf("%d", &n);
+	sort(card, card + n);
 
-	for (int i = 0; i < n; i++) {
+	scanf("%d", &m);
+
+	for (int i = 0; i < m; i++) {
 		int x;
 		scanf("%d", &x);
-		printf("%d ", m[x]);
+		printf("%d ", search(0, n - 1, 0, x));
 	}
 	printf("\n");
 }
