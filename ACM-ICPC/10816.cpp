@@ -5,25 +5,29 @@ using namespace std;
 int n, m;
 int card[500001];
 
-int search(int start, int end, int count, int target) {
+int search(int start, int end, int target) {
 	int mid = (start + end) / 2;
-	int result = 0;
+	int count = 0;
 
-	if (start > end) {
-		return count;
-	} else {
-		if (card[mid] > target) {
-			result = search(start, mid - 1, count, target);
+	while (start <= end) {
+		mid = (start + end) / 2;
+
+		if (card[mid] == target) {
+			for (int i = start; i <= end; i++) {
+				if (card[i] == target) {
+					count++;
+				}
+			}
+
+			return count;
+		} else if (card[mid] > target) {
+			end = mid - 1;
 		} else if (card[mid] < target) {
-			result = search(mid + 1, end, count, target);
-		} else {
-			result += search(start, mid - 1, count, target);
-			result += search(mid + 1, end, count, target);
-			result += 1;
+			start = mid + 1;
 		}
-
-		return result;
 	}
+
+	return 0;
 }
 
 int main() {
@@ -40,7 +44,10 @@ int main() {
 	for (int i = 0; i < m; i++) {
 		int x;
 		scanf("%d", &x);
-		printf("%d ", search(0, n - 1, 0, x));
+		// printf("%d ", search(0, n - 1, x));
+		// printf("%d ", upper_bound(card, card + n, x) - lower_bound(card, card + n, x));
+		pair<int*, int*> result = equal_range(card, card + n, x);
+		printf("%d ", result.second - result.first);
 	}
 	printf("\n");
 }
