@@ -49,4 +49,4 @@ CMakeLists.txt
 .vscode
 
 # input fild
-./ACM-ICPC/input.txt
+ACM-ICPC/input.txt
