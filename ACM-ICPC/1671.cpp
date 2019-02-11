@@ -26,13 +26,6 @@ int dfs(int k) {
         }
     }
 
-    // for (auto i : v[k]) {
-    //     if(!b[i] || dfs(b[i])) {
-    //         b[i] = k;
-    //         return 1;
-    //     }
-    // }
-
     return 0;
 }
 
