@@ -50,3 +50,6 @@ CMakeLists.txt
 
 # input fild
 ACM-ICPC/input.txt
+
+# practice code
+ACM-ICPC/practice.cpp
