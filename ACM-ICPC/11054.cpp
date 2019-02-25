@@ -1,58 +1,40 @@
-//
-// Created by secret on 10/13/17.
-//
-
-#define LOCAL
-
 #include <cstdio>
 
 using namespace std;
 
-int n, max;
-int a[1001], dp[2][1001];
+int n, answer;
+int value[1001], dp[2][1001];
 
 int main() {
-#ifdef LOCAL
-    freopen("input.txt", "r", stdin);
-#endif
-
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
+        scanf("%d", &value[i]);
     }
 
     for (int i = 0; i < n; i++) {
-        int maxA = 0;
+        dp[0][i] = 1;
         for (int j = 0; j < i; j++) {
-            if (a[i] > a[j]) {
-                if (maxA < dp[0][j]) {
-                    maxA = dp[0][j];
-                }
+            if (value[i] > value[j] && dp[0][i] < dp[0][j] + 1) {
+                dp[0][i] = dp[0][j] + 1;
             }
         }
-        dp[0][i] = maxA + 1;
     }
 
-    for (int i = n; i > 0; i--) {
-        int maxA = 0;
-        for (int j = n; j > i; j--) {
-            if (a[i] > a[j]) {
-                if (maxA < dp[1][j]) {
-                    maxA = dp[1][j];
-                }
+    for (int i = n - 1; i >= 0; i--) {
+        dp[1][i] = 0;
+        for (int j = n - 1; j >= i; j--) {
+            if (value[i] > value[j] && dp[1][i] < dp[1][j] + 1) {
+                dp[1][i] = dp[1][j] + 1;
             }
-        }
-        if (dp[1][i] < maxA + 1) {
-            dp[1][i] = maxA + 1;
         }
     }
 
     for (int i = 0; i < n; i++) {
-        if (max < dp[0][i] + dp[1][i]) {
-            max = dp[0][i] + dp[1][i];
+        if (answer < dp[0][i] + dp[1][i]) {
+            answer = dp[0][i] + dp[1][i];
         }
     }
 
-    printf("%d\n", max - 2);
+    printf("%d\n", answer);
 }
