@@ -1,18 +1,22 @@
-#include <iostream>
-#include <string>
+#include <cstdio>
+#include <vector>
+#include <cmath>
 using namespace std;
 
-int k;
-string arr[10], answer;
-bool visited[10];
+typedef unsigned long long ULLONG;
 
-void dfs(int v, int cnt, string str) {
+int k;
+char arr[10];
+bool visited[10];
+vector<ULLONG> answer;
+
+void dfs(int v, int cnt, ULLONG result) {
     if (cnt == k) {
-        answer += str;
+        answer.push_back(result);
     } else {
         for (int i = 0; i < 10; i++) {
             if (!visited[i]) {
-                if (arr[cnt].compare("<") == 0) {
+                if (arr[cnt] == '<') {
                     if (v >= i) {
                         continue;
                     }
@@ -22,7 +26,7 @@ void dfs(int v, int cnt, string str) {
                     }
                 }
                 visited[i] = true;
-                dfs(i, cnt + 1, str + to_string(i));
+                dfs(i, cnt + 1, result * 10 + i);
             }
         }
     }
@@ -30,24 +34,21 @@ void dfs(int v, int cnt, string str) {
 }
 
 int main() {
-    cin >> k;
+    scanf("%d", &k);
 
     for (int i = 0; i < k; i++) {
-        cin >> arr[i];
+        scanf("%s", arr + i);
     }
 
     for (int i = 0; i < 10; i++) {
         visited[i] = true;
-        dfs(i, 0, to_string(i));
+        dfs(i, 0, i);
     }
 
-    for (int i = 0; i <= k; i++) {
-        cout << answer[i];
+    printf("%lld\n", answer[answer.size() - 1]);
+    if (answer[0] < pow(10, k)) {
+        printf("0%lld\n", answer[0]);
+    } else {
+        printf("%lld\n", answer[0]);
     }
-    cout << endl;
-
-    for (int i = answer.size() - k - 1; k >= 0; k--, i++) {
-        cout << answer[i];
-    }
-    cout << endl;
 }
