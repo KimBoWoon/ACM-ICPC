@@ -9,6 +9,7 @@ int main() {
 
 	sum = 1000 - n;
 
+	// 제일 큰 값부터 빼주면 된다
 	for (int i = 0; sum != 0;) {
 		if (sum >= coin[i]) {
 			sum -= coin[i];

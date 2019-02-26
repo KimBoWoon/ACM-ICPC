@@ -15,10 +15,12 @@ int main() {
 		number[s[i] - '0']++;
 	}
 
+	// 30의 배수는 3으로 나누어 떨어지거나 0이 한번이라도 등장해야한다
 	if (sum % 3 || !number[0]) {
 		cout << -1;
 	}
 	else {
+		// 제일 큰 수 부터 출력하면 제일 큰 수를 만들 수 있다
 		for (int i = 9; i >= 0; i--) {
 			while (number[i]--) {
 				cout << i;
