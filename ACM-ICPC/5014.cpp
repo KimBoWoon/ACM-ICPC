@@ -13,12 +13,14 @@ void bfs() {
         int here = q.front();
         q.pop();
 
+        // 올라간다
         int next = here + u;
         if (next <= f && building[next] == 0) {
             building[next] = building[here] + 1;
             q.push(next);
         }
 
+        // 내려간다
         next = here - d;
         if (next > 0 && building[next] == 0) {
             building[next] = building[here] + 1;
@@ -30,7 +32,8 @@ void bfs() {
 int main() {
     scanf("%d %d %d %d %d", &f, &s, &g, &u, &d);
 
-    building[s] = true;
+    // 현재 층 저장
+    building[s] = 1;
     q.push(s);
 
     bfs();
