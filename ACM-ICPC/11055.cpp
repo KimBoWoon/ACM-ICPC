@@ -1,7 +1,7 @@
 #include <cstdio>
 using namespace std;
 
-int n, max;
+int n, answer;
 int a[1001], dp[1001];
 
 int main() {
@@ -22,10 +22,10 @@ int main() {
 			}
 		}
 		dp[i] = temp + a[i];
-		if (max < dp[i]) {
-			max = dp[i];
+		if (answer < dp[i]) {
+			answer = dp[i];
 		}
 	}
 
-	printf("%d\n", max);
+	printf("%d\n", answer);
 }
