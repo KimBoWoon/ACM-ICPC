@@ -14,16 +14,18 @@ bool visited[11][11][11][11];
 queue<point> r, b;
 
 void move(int& nx, int& ny, int x, int y) {
-    while (map[nx][ny] != '#') {
+    while (true) {
+        if (map[nx][ny] == '#') {
+            nx -= x;
+            ny -= y;
+            break;
+        }
+        if (map[nx][ny] == 'O') {
+            break;
+        }
         nx += x;
         ny += y;
-        if (map[nx][ny] == 'O') {
-            return;
-        }
     }
-
-    nx -= x;
-    ny -= y;
 }
 
 void bfs() {
