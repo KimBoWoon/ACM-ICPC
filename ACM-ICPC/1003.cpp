@@ -1,28 +1,24 @@
-#include <cstdio>
-using namespace std;
+#include <bits/stdc++.h>
 
+int t, n;
 int arr[41] = {1, 1};
 
-int fibonacci(int n) {
-    if (n <= 1) {
-        return arr[n];
+int topDown(int x) {
+    if (x <= 1) {
+        return arr[x];
     } else {
-        if (arr[n] > 0) {
-                return arr[n];
+        if (arr[x] > 0) {
+            return arr[x];
         }
     }
     
-    return arr[n] = fibonacci(n - 1) + fibonacci(n - 2);
+    return arr[x] = topDown(x - 1) + topDown(x - 2);
 }
 
 int main() {
-    int testCase;
+    scanf("%d", &t);
     
-    scanf("%d", &testCase);
-    
-    while (testCase--) {
-        int n;
-        
+    while (t--) {
         scanf("%d", &n);
         
         if (n == 0) {
@@ -30,7 +26,7 @@ int main() {
         } else if (n == 1) {
             printf("0 1\n");
         } else {
-            fibonacci(n);
+            topDown(n);
             printf("%d %d\n", arr[n - 2], arr[n - 1]);
         }
     }
