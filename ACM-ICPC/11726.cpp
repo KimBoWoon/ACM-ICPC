@@ -1,23 +1,44 @@
-#include <cstdio>
-using namespace std;
+#include <bits/stdc++.h>
 
-#pragma warning(disable:4996)
+#define MOD 10007
 
-int arr[1001];
+int n;
+int dp[1001];
 
-int main() {
-	int n;
-
-	scanf("%d", &n);
-
-	arr[0] = 0;
-	arr[1] = 1;
-	arr[2] = 2;
-	for (int i = 3; i <= n; i++) {
-		arr[i] = (arr[i - 1] + arr[i - 2]) % 10007;
+// 마지막에 올 수 있는 도형은
+// 2x1 2개, 1x2 1개 이므로
+// dp[n - 1] + dp[n - 2]가 된다
+int topDown(int x) {
+	if (x == 0) {
+		return dp[0] = 0;
+	}
+	if (x == 1) {
+		return dp[1] = 1;
+	}
+	if (x == 2) {
+		return dp[2] = 2;
 	}
 
-	printf("%d\n", arr[n] % 10007);
+	if (dp[x] > 0) {
+		return dp[x];
+	}
 
-	return 0;
+	return dp[x] = (topDown(x - 1) + topDown(x - 2)) % MOD;
+}
+
+int bottomUp(int x) {
+	dp[1] = 1;
+	dp[2] = 2;
+	for (int i = 3; i <= x; i++) {
+		dp[i] = (dp[i - 1] + dp[i - 2]) % MOD;
+	}
+
+	return dp[x] % MOD;
+}
+
+int main() {
+	scanf("%d", &n);
+	memset(dp, 0, sizeof(dp));
+	printf("%d\n", topDown(n));
+	// printf("%d\n", bottomUp(n));
 }
