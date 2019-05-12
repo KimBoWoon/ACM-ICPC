@@ -5,7 +5,7 @@ int n, answer = -2e9;
 int arr[100001], dp[100001];
 
 int topDown(int x) {
-	if (x == 0) {
+	if (x == 1) {
 		answer = arr[x];
 		return arr[x];
 	}
@@ -17,7 +17,7 @@ int topDown(int x) {
 }
 
 int bottomUp(int x) {
-	for (int i = 0; i < x; i++) {
+	for (int i = 1; i <= x; i++) {
 		dp[i] = max(arr[i], arr[i] + dp[i - 1]);
 		if (answer < dp[i]) {
 			answer = dp[i];
@@ -30,14 +30,14 @@ int bottomUp(int x) {
 int main() {
 	scanf("%d", &n);
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 1; i <= n; i++) {
 		scanf("%d", &arr[i]);
 	}
 
-	topDown(n);
+	// topDown(n);
 
-	printf("%d\n", answer);
-	// printf("%d\n", bottomUp(n));
+	// printf("%d\n", answer);
+	printf("%d\n", bottomUp(n));
 
 	return 0;
 }
