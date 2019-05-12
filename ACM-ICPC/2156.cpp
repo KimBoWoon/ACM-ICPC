@@ -1,29 +1,54 @@
-#include <cstdio>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-#pragma warning(disable:4996)
+int n;
+int wine[10001], dp[10001];
 
-int wine[10001], result[10001][3];
+int topDown(int x) {
+	if (x == 1) {
+		dp[0] = wine[0];
+		return dp[1] = wine[0] + wine[1];
+	}
+
+	if (dp[x] != 0) {
+		return dp[x];
+	}
+
+	topDown(x - 1);
+
+	dp[x] = dp[x - 1];
+	dp[x] = max(dp[x], dp[x - 2] + wine[x]);
+	dp[x] = max(dp[x], dp[x - 3] + wine[x] + wine[x - 1]);
+
+	return dp[x - 1];
+}
+
+int bottomUp(int x) {
+	dp[0] = wine[0];
+	dp[1] = wine[0] + wine[1];
+
+	for (int i = 2; i < x; i++) {
+		dp[i] = dp[i - 1];
+		if (dp[i] < dp[i - 2] + wine[i]) {
+			dp[i] = dp[i - 2] + wine[i];
+		}
+		if (dp[i] < dp[i - 3] + wine[i] + wine[i - 1]) {
+			dp[i] = dp[i - 3] + wine[i] + wine[i - 1];
+		}
+	}
+
+	return dp[x - 1];
+}
 
 int main() {
-	int n;
-
 	scanf("%d", &n);
 
 	for (int i = 0; i < n; i++) {
 		scanf("%d", &wine[i]);
 	}
 
-	result[0][1] = wine[0];
-	for (int i = 1; i < n; i++) {
-		//result[i][0] : Ã¹¹øÂ° ÀÜ, result[i][1] : µÎ¹øÂ° ÀÜ, result[i][2] : ¼¼¹øÂ° ÀÜ
-		result[i][0] = max(result[i - 1][0], max(result[i - 1][1], result[i - 1][2]));
-		result[i][1] = wine[i] + result[i - 1][0];
-		result[i][2] = wine[i] + result[i - 1][1];
-	}
-
-	printf("%d\n", max(result[n - 1][0], max(result[n - 1][1], result[n - 1][2])));
+	printf("%d\n", topDown(n));
+	// printf("%d\n", bottomUp(n));
 
 	return 0;
 }
