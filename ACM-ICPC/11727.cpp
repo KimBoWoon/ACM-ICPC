@@ -1,22 +1,49 @@
-#include <cstdio>
-using namespace std;
+#include <bits/stdc++.h>
 
-#pragma warning(disable:4996)
+#define MOD 10007
 
-unsigned long long arr[1001];
+typedef unsigned long long ULLONG;
+
 int n;
+ULLONG dp[1001];
+
+ULLONG topDown(int x) {
+	if (x == 0) {
+		return dp[x] = 0;
+	}
+	if (x == 1) {
+		return dp[x] = 1;
+	}
+	if (x == 2) {
+		return dp[x] = 3;
+	}
+
+	if (dp[x] != -1) {
+		return dp[x];
+	}
+
+	dp[x] = (topDown(x - 1) + topDown(x - 2) * 2) % MOD;
+
+	return dp[x] % MOD;
+}
+
+ULLONG bottomUp(int x) {
+	dp[0] = 0;
+	dp[1] = 1;
+	dp[2] = 3;
+	for (int i = 3; i <= x; i++) {
+		dp[i] = (dp[i - 1] + dp[i - 2] * 2) % MOD;
+	}
+
+	return dp[x] % MOD;
+}
 
 int main() {
 	scanf("%d", &n);
 
-	arr[0] = 0;
-	arr[1] = 1;
-	arr[2] = 3;
-	for (int i = 3; i <= n; i++) {
-		arr[i] = (arr[i - 1] + arr[i - 2] * 2) % 10007;
-	}
-
-	printf("%lld\n", arr[n] % 10007);
+	memset(dp, -1, sizeof(dp));
+	printf("%lld\n", topDown(n));
+	// printf("%lld\n", bottomUp(n));
 
 	return 0;
 }
