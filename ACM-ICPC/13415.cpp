@@ -1,18 +1,10 @@
-#include <cstdio>
-#include <algorithm>
-#include <functional>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-#pragma warning(disable:4996)
-
-typedef struct order {
-	int num, flag;
-} Order;
-
-int n, k;
+int n, k, x, y, temp;
 int arr[100001];
-vector<Order> v;
+stack<int> s;
+deque<int> dq;
 
 int main() {
 	scanf("%d", &n);
@@ -23,33 +15,51 @@ int main() {
 
 	scanf("%d", &k);
 
-	for (int i = 0; i < k * 2; i++) {
-		int x;
-		scanf("%d", &x);
-		
-		while (true) {
-			if (v.empty()) {
-				v.push_back({ x, i % 2 });
-				break;
-			}
-			else {
-				if (v[v.size() - 1].num < x) {
-					v.pop_back();
-				}
-				else {
-					v.push_back({ x, i % 2 });
-					break;
-				}
-			}
+	for (int i = 0; i < k; i++) {
+		scanf("%d %d", &x, &y);
+
+		temp = max(temp, max(x, y));
+
+		while (!s.empty() && abs(s.top()) < x) {
+			s.pop();
 		}
+		s.push(x);
+
+		while (!s.empty() && abs(s.top()) < y) {
+			s.pop();
+		}
+		s.push(-y);
 	}
 
-	for (int i = 0; i < v.size(); i++) {
-		if (v[i].flag) {
-			sort(arr + 1, arr + v[i].num + 1, greater<int>());
+	sort(arr + 1, arr + temp + 1);
+
+	for (int i = 1; i <= temp; i++) {
+		dq.push_back(arr[i]);
+	}
+
+	stack<int> s1;
+	while (!s.empty()) {
+		s1.push(s.top());
+		s.pop();
+	}
+
+	while (!s1.empty()) {
+		int cur = s1.top();
+		s1.pop();
+		int prev = 0;
+		if (!s1.empty()) {
+			prev = abs(s1.top());
 		}
-		else {
-			sort(arr + 1, arr + v[i].num + 1, less<int>());
+		if (cur > 0) {
+			for (int i = cur; i > prev; i--) {
+				arr[i] = dq.back();
+				dq.pop_back();
+			}
+		} else {
+			for (int i = -cur; i > prev; i--) {
+				arr[i] = dq.front();
+				dq.pop_front();
+			}
 		}
 	}
 
