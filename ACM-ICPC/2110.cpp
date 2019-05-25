@@ -1,9 +1,30 @@
-#include <cstdio>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int x[200000];
-int n, c;
+int n, c, answer;
+
+int binarySearch(int left, int right) {
+	while (left <= right) {
+		int mid = (left + right) / 2, cnt = 1, h = x[0];
+
+		for (int i = 1; i < n; i++) {
+			if (x[i] - h >= mid) {
+				cnt++;
+				h = x[i];
+			}
+		}
+
+		if (cnt >= c) {
+			answer = mid;
+			left = mid + 1;
+		} else {
+			right = mid - 1;
+		}
+	}
+
+	return answer;
+}
 
 int main() {
 	scanf("%d %d", &n, &c);
@@ -14,27 +35,5 @@ int main() {
 
 	sort(x, x + n);
 
-	int start = 1, end = x[n - 1] - x[0], cnt, h, ans;
-	int mid = (start + end) / 2;
-
-	while (start <= end) {
-		mid = (start + end) / 2;
-		cnt = 1;
-		h = x[0];
-		
-		for (int i = 1; i < n && cnt <= c; i++) {
-			if (x[i] - h >= mid) {
-				cnt++;
-				h = x[i];
-			}
-		}
-
-		if (cnt >= c) {
-			ans = mid;
-			start = mid + 1;
-		}
-		else end = mid - 1;
-	}
-
-	printf("%d\n", ans);
+	printf("%d\n", binarySearch(1, x[n - 1] - x[0]));
 }
