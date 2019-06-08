@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 
 char map[51][51];
+bool cycle;
 bool visited[51][51];
-int n, m;
+int n, m, answer;
 int dx[] = { 1, 0, -1, 0 }, dy[] = { 0, 1, 0, -1 };
 int dp[51][51];
 
@@ -14,6 +15,7 @@ int topDown(int x, int y) {
         return 0;
     }
     if (visited[x][y]) {
+        cycle = true;
         return -1;
     }
 
@@ -43,5 +45,11 @@ int main(){
 
     memset(dp, -1, sizeof(dp));
 
-    printf("%d\n", topDown(0, 0));
+    answer = topDown(0, 0);
+
+    if (cycle) {
+        printf("-1\n");
+    } else {
+        printf("%d\n", answer);
+    }
 }
