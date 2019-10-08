@@ -4,6 +4,12 @@ using namespace std;
 int n, answer = -2e9;
 int arr[100001], dp[100001];
 
+/*
+n번째 자리까지 합치면 이득인 경우 : arr[i] + dp[i - 1]
+n번째 자리까지 합쳤는데 이득이 아닌 경우(새로 시작) : arr[i]
+참고 : https://limkydev.tistory.com/120
+*/
+
 int topDown(int x) {
 	if (x == 1) {
 		answer = arr[x];

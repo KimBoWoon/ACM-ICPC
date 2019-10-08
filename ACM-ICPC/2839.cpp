@@ -3,6 +3,10 @@ using namespace std;
 
 int n, min = 99999999;
 
+/*
+3kg, 5kg의 설탕 봉지를 가지고 모든 경우의 수를 탐색
+*/
+
 int main() {
 	scanf("%d", &n);
 

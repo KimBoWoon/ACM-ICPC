@@ -10,6 +10,10 @@ using namespace std;
 int arr[1001];
 int n, cnt;
 
+/*
+소수 찾기
+*/
+
 int main() {
 	scanf("%d", &n);
 

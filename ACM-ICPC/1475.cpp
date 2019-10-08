@@ -5,6 +5,11 @@ using namespace std;
 string s;
 int num[10];
 
+/*
+9를 모두 6으로 변경한 뒤에 6 / 2를 하면된다
+홀수일 경우를 위해 나머지 값도 더해준다
+*/
+
 int main() {
 	int max = 0;
 
