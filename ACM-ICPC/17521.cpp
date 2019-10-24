@@ -12,21 +12,33 @@ int main() {
         scanf("%d", &graph[i]);
     }
 
-    low = graph[0];
-
-    for (int i = 1; i < n; i++) {
-        if (low < graph[i]) {
-            hi = graph[i];
-            ++i;
-            for (i; hi < graph[i] && i < n; i++) {
-                hi = graph[i];
-            }
-            w = (w / low) * hi + w % low;
+    for (int i = 0; i < n - 1; i++) {
+        if (graph[i] < graph[i + 1]) {
+            w = w % graph[i] + w / graph[i] * graph[i + 1];
         }
-        low = graph[i];
     }
 
     printf("%lld\n", w);
+
+    // for (int i = 0; i < n; i++) {
+    //     scanf("%d", &graph[i]);
+    // }
+
+    // low = graph[0];
+
+    // for (int i = 1; i < n; i++) {
+    //     if (low < graph[i]) {
+    //         hi = graph[i];
+    //         ++i;
+    //         for (i; hi < graph[i] && i < n; i++) {
+    //             hi = graph[i];
+    //         }
+    //         w = (w / low) * hi + w % low;
+    //     }
+    //     low = graph[i];
+    // }
+
+    // printf("%lld\n", w);
 
     // low = graph[0];
     // for (int i = 1; i < n; i++) {
