@@ -2,13 +2,15 @@
 #include <algorithm>
 #include <queue>
 #include <vector>
-
+#include <memory.h>
 using namespace std;
 
-int t, n, k, w, temp, answer;
-int indegree[1001];
-vector<vector<int> > graph;
-vector<int> time;
+#define SIZE 5000
+
+int t, n, k, w;
+int indegree[SIZE];
+int cost[SIZE], time[SIZE];
+vector<int> graph[SIZE];
 
 /*
 1) indegree(진입차수) 가 0인 점을 큐에 넣고 탐색을 시작한다.
@@ -22,25 +24,24 @@ void bfs() {
     for (int i = 1; i <= n; i++) {
         if (indegree[i] == 0) { // 현재 진입차수가 0인 점을 큐에 넣음
             q.push(i);
-            answer = max(time[i - 1], answer);
         }
     }
 
-    while (!q.empty()) {
+    while (indegree[w] > 0) {
         int here = q.front();
         q.pop();
-        temp = 0;
 
         for (int i = 0; i < graph[here].size(); i++) {
             int there = graph[here][i];
             indegree[there]--; // 연결된 곳의 차수를 1씩 감소해준다.
+            cost[there] = max(cost[there], cost[here] + time[here]);
             if (indegree[there] == 0) { // 다시 0인 곳을 큐에 넣음
                 q.push(there);
-                temp = max(temp, time[there - 1]);
             }
         }
-        answer += temp;
     }
+
+    printf("%d\n", cost[w] + time[w]);
 }
 
 int main() {
@@ -49,13 +50,9 @@ int main() {
     while (t--) {
         scanf("%d %d", &n, &k);
 
-        for (int i = 0; i < n; i++) {
-            int x;
-            scanf("%d", &x);
-            time.push_back(x);
+        for (int i = 1; i <= n; i++) {
+            scanf("%d", &time[i]);
         }
-
-        graph.resize(n + 1);
 
         for (int i = 0; i < k; i++) {
             int a, b;
@@ -68,7 +65,12 @@ int main() {
 
         bfs();
 
-        printf("%d\n", answer);
+        memset(indegree, 0, SIZE);
+        memset(cost, 0, SIZE);
+        memset(time, 0, SIZE);
+        for (int i = 0; i <= n; i++) {
+            graph[i].clear();
+        }
     }
 
     return 0;
