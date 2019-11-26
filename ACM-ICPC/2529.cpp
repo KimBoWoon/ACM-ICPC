@@ -22,7 +22,7 @@ void dfs(int v, int cnt, ULLONG result) {
                     }
                 } else {
                     if (v <= i) {
-                            continue;
+                        continue;
                     }
                 }
                 visited[i] = true;
