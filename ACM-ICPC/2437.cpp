@@ -1,9 +1,3 @@
-//
-// Created by null on 11/9/17.
-//
-
-#define LOCAL
-
 #include <cstdio>
 #include <algorithm>
 using namespace std;
@@ -12,10 +6,6 @@ int n, ans = 1;
 int weight[1001];
 
 int main() {
-#ifdef LOCAL
-    freopen("input.txt", "r", stdin);
-#endif
-
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
