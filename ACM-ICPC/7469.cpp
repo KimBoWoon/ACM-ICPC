@@ -6,11 +6,10 @@ using namespace std;
 
 #define SIZE 1000000
 
-int n, m, k, h, tree_size;
-int arr[SIZE];
+int n, m, k, h, x, tree_size;
 vector<int> tree[SIZE * 2];
 
-void update(int node, int index, int start, int end, int value) {
+void update(int node, int start, int end, int index, int value) {
     if (start > index || index > end) {
         return;
     }
@@ -20,8 +19,8 @@ void update(int node, int index, int start, int end, int value) {
     if (start != end) {
         int mid = (start + end) / 2;
 
-        update(node * 2, index, start, mid, value);
-        update(node * 2 + 1, index, mid + 1, end, value);
+        update(node * 2, start, mid, index, value);
+        update(node * 2 + 1, mid + 1, end, index, value);
     }
 }
 
@@ -43,8 +42,8 @@ int main() {
     scanf("%d %d", &n, &m);
 
     for (int i = 1; i <= n; i++) {
-        scanf("%d", &arr[i]);
-        update(1, i, 1, n, arr[i]);
+        scanf("%d", &x);
+        update(1, 1, n, i, x);
     }
 
     for (int i = 0; i < SIZE * 2; i++) {
