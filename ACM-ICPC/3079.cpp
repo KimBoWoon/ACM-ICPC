@@ -1,23 +1,20 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <climits>
 using namespace std;
 
-typedef long long LLONG;
+typedef unsigned long long ULLONG;
 
 int n, m;
-int desk[100001];
+ULLONG desk[100001];
+ULLONG maxTime;
 
-LLONG binarySearch(LLONG left, LLONG right) {
+ULLONG binarySearch(ULLONG left, ULLONG right) {
     while (left <= right) {
-        LLONG mid = (left + right) / 2, sum = 0;
+        ULLONG mid = (left + right) / 2, sum = 0;
 
         for (int i = 0; i < n; i++) {
             sum += mid / desk[i];
         }
-
-        // printf("left : %lld ", left);
-        // printf("mid : %lld ", mid);
-        // printf("sum : %lld ", sum);
-        // printf("right : %lld\n", right);
 
         if (sum >= m) {
             right = mid - 1;
@@ -33,8 +30,11 @@ int main() {
     scanf("%d %d", &n, &m);
 
     for (int i = 0; i < n; i++) {
-        scanf("%d", &desk[i]);
+        scanf("%lld", &desk[i]);
+        if (maxTime < desk[i]) {
+            maxTime = desk[i];
+        }
     }
 
-    printf("%lld\n", binarySearch(1, 1000000000000000000));
+    printf("%lld\n", binarySearch(1, maxTime * m));
 }
