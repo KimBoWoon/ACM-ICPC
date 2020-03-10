@@ -8,6 +8,10 @@ using namespace std;
 int n, x;
 vector<int> v;
 
+// 이분탐색을 시작하여 최적의 위치 탐색
+// lower_bound(start, end, target)을 사용
+// target보다 큰 가장 작은 정수를 찾아 교체한다
+
 int main() {
     scanf("%d", &n);
 

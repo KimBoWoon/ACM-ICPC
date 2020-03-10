@@ -14,11 +14,15 @@ void go(int idx) {
 }
 
 void lis(int& idx, int value) {
+    // value값이 마지막 값보다 크면 뒤에 삽입
     if (idx == 0 || (idx > 0 && dp[idx - 1] <= value)) {
         dp[idx++] = value;
         return;
     }
 
+    // 아니면 이분탐색을 시작하여 최적의 위치 탐색
+    // lower_bound(start, end, target)을 사용할 수도 있다
+    // target보다 큰 가장 작은 정수를 찾아 교체한다
     int start = 0, end = idx - 1;
 
     while (start <= end) {
@@ -31,6 +35,7 @@ void lis(int& idx, int value) {
         }
     }
 
+    // 값을 대체
     dp[end + 1] = value;
 }
 
