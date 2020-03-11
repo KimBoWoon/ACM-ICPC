@@ -1,7 +1,3 @@
-//
-// Created by secret on 6/17/17.
-//
-
 #include<cstdio>
 #include<algorithm>
 using namespace std;
@@ -22,3 +18,7 @@ int main() {
 
     return 0;
 }
+
+// n보다 작거나 같은 제곱수 이므로 제곱수만 확인
+// min(현재값, 이전값 + 1)
+// min(dp[i], dp[n - i * i] + 1)
