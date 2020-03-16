@@ -11,8 +11,11 @@ void f(int n, int stick1, int stick2, int stick3) {
 		printf("%d %d\n", stick1, stick3);
 	}
 	else {
+		// 1. n - 1개의 원판을 3번 막대를 이용해 2번으로 이동
 		f(n - 1, stick1, stick3, stick2);
+		// 2. 마지막 원판을 3번 막대로 이동
 		printf("%d %d\n", stick1, stick3);
+		// 3. 2번 막대에 있는 원판을 1번 막대를 사용하여 3번으로 이동
 		f(n - 1, stick2, stick1, stick3);
 	}
 }
@@ -20,6 +23,7 @@ void f(int n, int stick1, int stick2, int stick3) {
 int main() {
 	scanf("%d", &n);
 
+	// 2^n-1 계산
 	data[0] = '1';
 	for (int i = 1; i <= n; i++) {
 		tmp = 0;
