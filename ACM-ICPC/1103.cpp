@@ -8,17 +8,23 @@ int dx[] = { 1, 0, -1, 0 }, dy[] = { 0, 1, 0, -1 };
 int dp[51][51];
 
 int topDown(int x, int y) {
+    // 맵 범위 확인
     if (x >= n || x < 0 || y >= m || y < 0) {
         return 0;
     }
+
+    // 구멍
     if (map[x][y] == 'H') {
         return 0;
     }
+
+    // 무한으로 움직일 수 있다
     if (visited[x][y]) {
         cycle = true;
         return -1;
     }
 
+    // 메모이제이션
     if (dp[x][y] != -1) {
         return dp[x][y];
     }
