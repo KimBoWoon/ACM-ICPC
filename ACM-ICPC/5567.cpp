@@ -1,5 +1,3 @@
-#define LOCAL
-
 #include <cstdio>
 #include <queue>
 using namespace std;
@@ -7,29 +5,28 @@ using namespace std;
 int n, m, ans, cnt;
 bool arr[501][501];
 bool mark[1020];
-int mark2[1020];
 
 void bfs(int v) {
 	queue<int> q;
 
 	q.push(v);
 	mark[v] = true;
-	int x;
+
 	while (!q.empty()) {
 		int size = q.size();
-		// ±íÀÌ Á¶ÀıÀ» À§ÇÑ ¹İº¹¹®
+		// 1ë²ˆ ë¶€í„° ì‹œì‘ 1ë²ˆì´ ìƒê·¼ì´ë‹¤
 		while (size--) {
-			x = q.front();
+			int x = q.front();
 			q.pop();
 			for (int i = 1; i <= n; i++) {
-				if (arr[x][i] && !mark[i]) {
+				if (arr[x][i] && !mark[i]) { // arr[x][i]ê°€ ì°¸ì´ê³  ë°©ë¬¸í•˜ì§€ ì•Šì•˜ë‹¤ë©´ ì¹œêµ¬
 					q.push(i);
 					mark[i] = true;
 					ans++;
 				}
 			}
 		}
-		// ±íÀÌ°¡ 2ÀÌ¸é Ä£±¸ÀÇ Ä£±¸±îÁö °Ë»ö ¿Ï·á
+		// cntê°€ 2 ì´ìƒì´ë©´ íƒìƒ‰ì„ 2ë²ˆ í–ˆë‹¤ëŠ” ê²ƒ ê·¸ê²ƒì€ ì¹œêµ¬ì˜ ì¹œêµ¬ê¹Œì§€ íƒìƒ‰í–ˆë‹¤ëŠ” ê²ƒì„ ì˜ë¯¸
 		if (++cnt > 1) {
 			break;
 		}
@@ -37,13 +34,9 @@ void bfs(int v) {
 }
 
 int main() {
-#ifdef LOCAL
-	freopen("input.txt", "r", stdin);
-#endif
-
 	scanf("%d %d", &n, &m);
 
-	// ÀÎÁ¢Çà·Ä ¸¸µé±â
+	// ì–‘ë°©í–¥ ê·¸ë˜í”„ ìƒì„±
 	for (int i = 0; i < m; i++) {
 		int x, y;
 
@@ -53,7 +46,6 @@ int main() {
 		arr[y - 1][x - 1] = true;
 	}
 
-	// bfs Å½»ö
 	bfs(0);
 
 	printf("%d\n", ans);
