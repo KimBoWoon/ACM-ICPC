@@ -1,11 +1,5 @@
-//
-// Created by secret on 1/4/17.
-//
-
 #include <cstdio>
 using namespace std;
-
-#pragma warning(disable:4996)
 
 int x, y, day;
 int m[13];
@@ -26,3 +20,6 @@ int main() {
 
     printf("%s\n", d[day % 7]);
 }
+
+// 달에 있는 날짜와 남은 날짜를 모두 더해준 뒤
+// 7로 나눈 나머지값을 출력

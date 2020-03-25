@@ -1,5 +1,3 @@
-#define LOCAL
-
 #include <cstdio>
 #include <queue>
 #include <vector>
@@ -10,8 +8,8 @@ using namespace std;
 
 #define INF 987654321
 vector<pair<int, int> > v[10001], rv[10001];
-// first´Â °Å¸®, second´Â ´ÙÀ½ Á¤Á¡.
-priority_queue<pair<int, int> > q, rq;
+// firstëŠ” ê±°ë¦¬, secondëŠ” ë‹¤ìŒ ì •ì .
+priority_queue<pair<int, int> > q;
 int dist[10001], rdist[10001];
 int n, m, x, maxDist;
 
@@ -26,7 +24,7 @@ void dijkstra(vector<pair<int, int> > v[10001], int *dist) {
 		int current = value.second;
 		int cost = -value.first;
 
-		// ÇöÀç Á¤Á¡±îÁöÀÇ °Å¸®°¡ ´õ ÂªÀº °æ¿ì ¹«½Ã.
+		// í˜„ì¬ ì •ì ê¹Œì§€ì˜ ê±°ë¦¬ê°€ ë” ì§§ì€ ê²½ìš° ë¬´ì‹œ.
 		if (dist[current] < cost) {
 			continue;
 		}
@@ -45,10 +43,6 @@ void dijkstra(vector<pair<int, int> > v[10001], int *dist) {
 
 
 int main(void) {
-#ifdef LOCAL
-	freopen("input.txt", "r", stdin);
-#endif
-
 	scanf("%d %d %d", &n, &m, &x);
 
 	for (int i = 0; i < m; i++) {
@@ -58,7 +52,7 @@ int main(void) {
 		rv[to].push_back(make_pair(cost, from));
 	}
 
-	// ½ÃÀÛ Á¤Á¡ºÎÅÍ next Á¤Á¡±îÁöÀÇ ÃÖ´Ü°Å¸®¸¦ ºü¸£°Ô ÂüÁ¶ ¹× °»½ÅÇÏ±â À§ÇÑ ¹è¿­.
+	// ì‹œì‘ ì •ì ë¶€í„° next ì •ì ê¹Œì§€ì˜ ìµœë‹¨ê±°ë¦¬ë¥¼ ë¹ ë¥´ê²Œ ì°¸ì¡° ë° ê°±ì‹ í•˜ê¸° ìœ„í•œ ë°°ì—´.
 	for (int i = 0; i < 10001; i++) {
 		dist[i] = rdist[i] = INF;
 	}

@@ -1,7 +1,4 @@
-#include <iostream>
 #include <cstdio>
-#include <cstdlib>
-#include <string>
 using namespace std;
 
 int main() {
@@ -18,8 +15,10 @@ int main() {
 	}
 
 	for (int i = 0; i < 10; i++) {
-		cout << cnt[i] << endl;
+		printf("%d\n", cnt[i]);
 	}
 
 	return 0;
 }
+
+// 곱한값이 int 값보다 클 수 있으므로 문자열로 처리한다
