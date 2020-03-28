@@ -2,6 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <cstring>
+#include <queue>
 using namespace std;
 
 int t, n;
@@ -22,6 +23,30 @@ void dfs(int x) {
             dfs(next);
         }
     }
+}
+
+bool bfs(vector<pair<int, int>>& v, int x) {
+    queue<pair<int, int>> q;
+    visited[x] = true;
+    q.push(v[x]);
+
+    while (!q.empty()) {
+        pair<int, int> value = q.front();
+        q.pop();
+
+        if (distance(v[v.size() - 1], value) <= 1000) { // 목적지까지 도달할 수 있는지 체크
+            return true;
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (distance(v[i], value) <= 1000 && !visited[i]) { // 아직 방문하지 않았고 맥주가게에 갈수 있는지 체크
+                q.push(v[i]);
+                visited[i] = true;
+            }
+        }
+    }
+
+    return false;
 }
 
 int main() {
@@ -52,12 +77,18 @@ int main() {
             }
         }
 
-        dfs(0);
+        // dfs(0);
 
-        if (visited[n + 1]) {
+        if (bfs(v, 0)) {
             printf("happy\n");
         } else {
             printf("sad\n");
         }
+
+        // if (visited[n + 1]) {
+        //     printf("happy\n");
+        // } else {
+        //     printf("sad\n");
+        // }
     }
 }

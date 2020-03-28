@@ -27,3 +27,7 @@ int main() {
 
     printf("-1\n");
 }
+
+// 참고
+// https://danco.tistory.com/30
+// 수학적 지식이 필요한 문제
