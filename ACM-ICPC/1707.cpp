@@ -15,7 +15,7 @@ bool bfs() {
     // 모든 정점에서 bfs 탐색을 해서 이분 그래프 인지 확인한다
     // 간선이 연결 되지 않아도 이분 그래프의 조건만 무시 하지 않는다면 이분 그래프가 맞다
     for (int i = 1; i <= v; i++) {
-        if (colors[i] == 0) {
+        if (colors[i] == 0) { // 아직 방문하지 않았다면 bfs 탐색 시작
             q.push(i);
             colors[i] = 1;
 
@@ -24,10 +24,10 @@ bool bfs() {
                 q.pop();
 
                 for (int j = 0; j < vec[here].size(); j++) {
-                    if (colors[vec[here][j]] == 0) {
+                    if (colors[vec[here][j]] == 0) { // 아직 방문하지 않았다면
                         q.push(vec[here][j]);
                         colors[vec[here][j]] = colors[here] * -1;
-                    } else if (colors[here] + colors[vec[here][j]] != 0) {
+                    } else if (colors[here] + colors[vec[here][j]] != 0) { // 인접한 정점끼리 더한 값이 0이 나오지 않으면 이분 그래프가 아니다
                         return false;
                     }
                 }

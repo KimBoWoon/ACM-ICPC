@@ -1,9 +1,3 @@
-//
-// Created by null on 10/30/17.
-//
-
-#define LOCAL
-
 #include <cstdio>
 #include <queue>
 using namespace std;
@@ -44,10 +38,6 @@ void dfs(int v) {
 }
 
 int main() {
-#ifdef LOCAL
-    freopen("input.txt", "r", stdin);
-#endif
-
     scanf("%d %d", &n, &m);
 
     for (int i = 0; i < m; i++) {
@@ -64,3 +54,6 @@ int main() {
 
     printf("%d\n", ans);
 }
+
+// 그래프의 개수를 세는 문제
+// 모든 정점에서 탐색을 하면된다

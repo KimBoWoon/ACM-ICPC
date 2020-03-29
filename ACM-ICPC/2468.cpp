@@ -48,6 +48,7 @@ int main() {
     scanf("%d", &n);
 
     // 입력값의 최소값과 최대값만 구해서 그 구간만 돌리면 더 빠르다
+    // 무조건 1부터 시작할 필요가 없기 때문
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             scanf("%d", &map[i][j]);
@@ -65,6 +66,7 @@ int main() {
         memset(mark, 0, sizeof(mark));
 
         // 물에 잠기는 곳은 0으로 표시
+        // 다음 차례에도 물에 잠기는건 같다
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (map[i][j] <= c) {

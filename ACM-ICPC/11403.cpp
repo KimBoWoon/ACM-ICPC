@@ -10,7 +10,7 @@ int result[101][101];
 void dfs(int v) {
 	for (int i = 0; i < n; i++) {
 		if (map[v][i] && !mark[i]) {
-			mark[i] = 1;
+			mark[i] = 1; // 방문 했음을 표기
 			dfs(i);
 		}
 	}
@@ -26,14 +26,12 @@ int main() {
 	}
 
 	for (int i = 0; i < n; i++) {
-		for (int i = 0; i < n; i++) {
-			mark[i] = 0;
-		}
+		memset(mark, 0, sizeof(mark)); // 방문을 표시하기 위해 초기화
 
 		dfs(i);
 
 		for (int j = 0; j < n; j++) {
-			result[i][j] = mark[j];
+			result[i][j] = mark[j]; // 방문했던 곳으로 만든다
 		}
 	}
 

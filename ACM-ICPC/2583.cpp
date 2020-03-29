@@ -45,13 +45,15 @@ int main() {
 
 		scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
 
+		// 사각형 영역표시
 		for (int i = x1; i < x2; i++) {
 			for (int j = y1; j < y2; j++) {
 				map[i][j] = -1;
 			}
 		}
 	}
-	
+
+	// 사각형의 영역이 아닌곳 bfs 탐색으로 넓이 구함
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			if (map[i][j] == 0) {

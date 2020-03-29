@@ -13,15 +13,13 @@ vector<pair<int, int>> wall;
 void bfs(int x, int y) {
 	queue<pair<int, int> > q;
 
-	for (int x = 0; x < n; x++) {
+	for (int x = 0; x < n; x++) { // 바이러스인 곳을 모두 큐에 넣는다
 		for (int y = 0; y < m; y++) {
 			if (factory[x][y] == 2) {
 				q.push(make_pair(x, y));
 			}
 		}
 	}
-
-	//q.push(make_pair(x, y));
 
 	while (!q.empty()) {
 		x = q.front().first;
@@ -55,15 +53,13 @@ void dfs(int x, int y) {
 }
 
 int main() {
-	freopen("input.txt", "r", stdin);
-
 	scanf("%d %d", &n, &m);
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			scanf("%d", &map[i][j]);
 			factory[i][j] = map[i][j];
-			if (map[i][j] == 0) {
+			if (map[i][j] == 0) { // 벽을 세울 수 있는 모든 곳 저장
 				wall.push_back(make_pair(i, j));
 			}
 		}
@@ -82,6 +78,7 @@ int main() {
 					}
 				}
 
+				// 임의의 장소에 벽을 세운다
 				factory[wall1.first][wall1.second] = 1;
 				factory[wall2.first][wall2.second] = 1;
 				factory[wall3.first][wall3.second] = 1;
@@ -117,6 +114,7 @@ int main() {
 				}
 				printf("\n");*/
 
+				// 안전한 장소 파악
 				for (int x = 0; x < n; x++) {
 					for (int y = 0; y < m; y++) {
 						if (factory[x][y] == 0) {
@@ -125,6 +123,7 @@ int main() {
 					}
 				}
 
+				// 최대값 저장
 				ans = max(ans, temp);
 				temp = 0;
 			}
