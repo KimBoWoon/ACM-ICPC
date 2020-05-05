@@ -66,3 +66,44 @@ int main() {
         (ans == true) ? printf("YES\n") : printf("NO\n");
     }
 }
+
+// #include <iostream>
+// #include <cstring>
+// #include <algorithm>
+// #include <vector>
+// using namespace std;
+
+// int testCase, n;
+// bool answer;
+
+// int main() {
+//     cin >> testCase;
+    
+//     while (testCase--) {
+//         answer = true;
+//         vector<string> v;
+
+//         cin >> n;
+        
+//         for (int i = 0; i < n; i++) {
+//             string s;
+//             cin >> s;
+//             v.push_back(s);
+//         }
+        
+//         sort(v.begin(), v.end());
+
+//         for (int i = 0; i < v.size() - 1; i++) {
+//             if (v[i] == v[i + 1].substr(0, v[i].size())) {
+//                 answer = false;
+//                 break;
+//             }
+//         }
+        
+//         if (answer) {
+//             cout << "YES" << endl;
+//         } else {
+//             cout << "NO" << endl;
+//         }
+//     }
+// }
