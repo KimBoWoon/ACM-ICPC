@@ -38,3 +38,6 @@ int main() {
 
 	return 0;
 }
+
+// 좋은 설명
+// https://wootool.tistory.com/83
