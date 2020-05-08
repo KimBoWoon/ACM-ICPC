@@ -12,10 +12,10 @@ int move(int x, int y) {
 		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i], ny = y + dy[i];
 
-			if (ny < 0 || nx < 0 || ny > n || nx > n) {
+			if (ny < 0 || nx < 0 || ny > n || nx > n) { // 범위를 벗어나거나
 				continue;
 			}
-			if (map[x][y] >= map[nx][ny]) {
+			if (map[x][y] >= map[nx][ny]) { // 다음에 갈곳에 있는 대나무위 수가 현재값보다 작으면
 				continue;
 			}
 
