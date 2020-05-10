@@ -1,7 +1,7 @@
 #include <cstdio>
 using namespace std;
 
-int n, m, mina = 999999999, minb = 999999999;
+int n, m, minA = 999999999, minB = 999999999;
 
 int main() {
 	scanf("%d %d", &n, &m);
@@ -11,21 +11,22 @@ int main() {
 
 		scanf("%d %d", &a, &b);
 
-		if (mina > a) {
-			mina = a;
+		if (minA > a) { // 세트로 샀을 때 가장 작은 값
+			minA = a;
 		}
-		if (minb > b) {
-			minb = b;
+
+		if (minB > b) { // 낱개로 샀을 때 가장 작은 값
+			minB = b;
 		}
 	}
 
-	if (mina > 6 * minb) {
-		mina = 6 * minb;
+	if (minA > 6 * minB) { // 만약 낱개로 6개를 사도 세트보다 싼 경우
+		minA = 6 * minB;
 	}
-	if ((n % 6) * minb > mina) {
-		printf("%d\n", (n / 6) * mina + mina);
-	}
-	else {
-		printf("%d\n", (n / 6) * mina + (n % 6) * minb);
+
+	if ((n % 6) * minB > minA) { // 낱개를 구입 가격이 세트가격보다 비싸지면
+		printf("%d\n", (n / 6) * minA + minA); // 한 세트를 더 사는게 좋다
+	} else {
+		printf("%d\n", (n / 6) * minA + (n % 6) * minB);
 	}
 }
