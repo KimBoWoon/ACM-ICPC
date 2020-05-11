@@ -1,54 +1,55 @@
 #include <cstdio>
+#include <string>
 #include <vector>
-#include <cmath>
 using namespace std;
 
-typedef unsigned long long ULLONG;
-
-int k;
+int n;
 char arr[10];
+vector<string> answer;
 bool visited[10];
-vector<ULLONG> answer;
 
-void dfs(int v, int cnt, ULLONG result) {
-    if (cnt == k) {
+void check(char *arr, int n, int x, string result) {
+    if (n == x) {
         answer.push_back(result);
-    } else {
-        for (int i = 0; i < 10; i++) {
-            if (!visited[i]) {
-                if (arr[cnt] == '<') {
-                    if (v >= i) {
-                        continue;
-                    }
-                } else {
-                    if (v <= i) {
-                        continue;
-                    }
-                }
-                visited[i] = true;
-                dfs(i, cnt + 1, result * 10 + i);
-            }
-        }
-    }
-    visited[v] = false;
-}
-
-int main() {
-    scanf("%d", &k);
-
-    for (int i = 0; i < k; i++) {
-        scanf("%s", arr + i);
     }
 
     for (int i = 0; i < 10; i++) {
-        visited[i] = true;
-        dfs(i, 0, i);
+        if (!visited[i]) {
+            visited[i] = true;
+
+            if (result.empty()) { // 비어있다면 시작 숫자 선택
+                result.push_back(i + '0');
+                check(arr, n, x, result);
+                result.pop_back();
+            } else { // 부등호에 맞게 숫자 넣기
+                if (arr[x] == '<') {
+                    if (result.back() - '0' < i) {
+                        result.push_back(i + '0');
+                        check(arr, n, x + 1, result);
+                        result.pop_back();
+                    }
+                } else {
+                    if (result.back() - '0' > i) {
+                        result.push_back(i + '0');
+                        check(arr, n, x + 1, result);
+                        result.pop_back();
+                    }
+                }
+            }
+
+            visited[i] = false;
+        }
+    }
+}
+
+int main() {
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf(" %c", &arr[i]);
     }
 
-    printf("%lld\n", answer[answer.size() - 1]);
-    if (answer[0] < pow(10, k)) {
-        printf("0%lld\n", answer[0]);
-    } else {
-        printf("%lld\n", answer[0]);
-    }
+    check(arr, n, 0, "");
+
+    printf("%s\n%s\n", answer.back().c_str(), answer.front().c_str());
 }

@@ -29,7 +29,7 @@ int main() {
 
 	for (int i = 0; i < n - 2; i++) {
 		for (int j = 0; j < m - 2; j++) {
-			if (before[i][j] != after[i][j]) {
+			if (before[i][j] != after[i][j]) { // 값이 다르면 3x3영역 반전
 				change(i, j);
 				ans++;
 			}
@@ -38,7 +38,7 @@ int main() {
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
-			if (before[i][j] != after[i][j]) {
+			if (before[i][j] != after[i][j]) { // 그래도 다르면 만들 수 없는 배열이므로 -1 출력
 				printf("-1");
 				return 0;
 			}
