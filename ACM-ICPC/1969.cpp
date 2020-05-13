@@ -15,7 +15,7 @@ int main() {
     for (int i = 0; i < m; i++) {
         int a = 0, t = 0, g = 0, c = 0;
 
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < n; j++) { // 세로로 보면서 어떤 값이 제일 많이 나왔는지 탐색
             switch (dna[j][i]) {
                 case 'A': 
                     a++;
@@ -33,7 +33,8 @@ int main() {
         }
 
         int maxChar = max(max(a, c), max(g, t));
-        answer += n - maxChar;
+        answer += n - maxChar; // 행의 길이 - 제일 많이나온 알파벳 = 다른 글자 수
+
         if (maxChar == a) {
             printf("A");
         } else if (maxChar == c) {
@@ -44,5 +45,6 @@ int main() {
             printf("T");
         }
     }
+
     printf("\n%d\n", answer);
 }
