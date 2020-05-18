@@ -1,32 +1,60 @@
 #include <cstdio>
 #include <queue>
-#include <functional>
 #include <vector>
-#include <algorithm>
-#include <utility>
 using namespace std;
 
-#pragma warning(disable:4996)
-
 #define INF 987654321
+
+// struct comp { // pairì€ firstë¥¼ ìš°ì„ ìœ¼ë¡œ ë¹„êµí•˜ê¸° ë•Œë¬¸ì— ì‹œê°„ì´ˆê³¼ê°€ ë°œìƒí•œë‹¤
+// 	bool operator()(const pair<int, int> &x, const pair<int, int> &y) {
+// 		return x.second < y.second; // ê·¸ë˜ì„œ secondë¥¼ ìš°ì„ ìœ¼ë¡œ ë¹„êµí•œë‹¤
+// 	}
+// };
+
 vector<pair<int, int> > v[20001];
-// first´Â °Å¸®, second´Â ´ÙÀ½ Á¤Á¡.
-priority_queue<pair<int, int> > q;
+// priority_queue<pair<int, int>, vector<pair<int, int>>, comp> pq;
+priority_queue<pair<int, int> > pq;
 int dist[20001];
 int V, E, start;
 
+// void dijkstra() {
+// 	dist[start] = 0;
+// 	pq.push({ start, 0 });
+
+// 	while (!pq.empty()) {
+// 		pair<int, int> value = pq.top();
+// 		pq.pop();
+
+// 		int current = value.first;
+// 		int cost = -value.second;
+
+// 		if (dist[current] < cost) {
+// 			continue;
+// 		}
+
+// 		for (int i = 0; i < v[current].size(); i++) {
+// 			int next = v[current][i].first;
+// 			int nextCost = v[current][i].second + dist[current];
+
+// 			if (dist[next] > nextCost) {
+// 				dist[next] = nextCost;
+// 				pq.push(make_pair(next, -nextCost));
+// 			}
+// 		}
+// 	}
+// }
+
 void dijkstra() {
 	dist[start] = 0;
-	q.push(make_pair(0, start));
+	pq.push(make_pair(0, start));
 
-	while (!q.empty()) {
-		pair<int, int> value = q.top();
-		q.pop();
+	while (!pq.empty()) {
+		pair<int, int> value = pq.top();
+		pq.pop();
 
 		int current = value.second;
 		int cost = -value.first;
 
-		// ÇöÀç Á¤Á¡±îÁöÀÇ °Å¸®°¡ ´õ ÂªÀº °æ¿ì ¹«½Ã.
 		if (dist[current] < cost) {
 			continue;
 		}
@@ -37,12 +65,11 @@ void dijkstra() {
 
 			if (dist[next] > nextCost) {
 				dist[next] = nextCost;
-				q.push(make_pair(-nextCost, next));
+				pq.push(make_pair(-nextCost, next));
 			}
 		}
 	}
 }
-
 
 int main(void) {
 	scanf("%d %d %d", &V, &E, &start);
@@ -50,10 +77,10 @@ int main(void) {
 	for (int i = 0; i < E; i++) {
 		int from, to, cost;
 		scanf("%d %d %d", &from, &to, &cost);
-		v[from].push_back(make_pair(cost, to));
+		// v[from].push_back({ to, cost });
+		v[from].push_back({ cost, to });
 	}
 
-	// ½ÃÀÛ Á¤Á¡ºÎÅÍ next Á¤Á¡±îÁöÀÇ ÃÖ´Ü°Å¸®¸¦ ºü¸£°Ô ÂüÁ¶ ¹× °»½ÅÇÏ±â À§ÇÑ ¹è¿­.
 	for (int i = 0; i < 20001; i++) {
 		dist[i] = INF;
 	}
