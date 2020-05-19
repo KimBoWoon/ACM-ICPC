@@ -1,48 +1,30 @@
-#define LOCAL
-
 #include <cstdio>
-#include <cstring>
 #include <algorithm>
-#include <climits>
 using namespace std;
 
-int n, ans;
-int map[1001], dp[1001];
+#define MAX 987654321
+
+int n;
+int arr[1001], dp[1001];
 
 int main() {
-#ifdef LOCAL
-	freopen("input.txt", "r", stdin);
-#endif
+    scanf("%d", &n);
 
-	scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        dp[i] = MAX;
+    }
 
-	for (int i = 0; i < n; i++) {
-		scanf("%d", &map[i]);
-	}
+    dp[0] = 0;
+    for (int i = 0; i < n; i++) { // ië²ˆì§¸ ìœ„ì¹˜
+        for (int j = 0; j <= arr[i]; j++) { // ì í”„í•  ìˆ˜ ìžˆëŠ” ê±°ë¦¬
+            dp[i + j] = min(dp[i + j], dp[i] + 1);
+        }
+    }
 
-	fill(dp, dp + n, INT_MAX);
-
-	dp[0] = 0;
-
-	for (int i = 0; i < n; i++) {
-		// Á¡ÇÁ ÇÒ ¼ö ÀÖ´Â °Å¸®
-		int jump = map[i];
-
-		// Á¡ÇÁ ÇÒ ¼ö ÀÖ´Â ¸ðµç °Å¸®¸¦ Ã¼Å©
-		for (int j = jump; j > 0; j--) {
-			// ¾ÆÁ÷ ¹æ¹® ÇÏÁö ¾Ê¾ÒÀ¸¸é
-			if (dp[i] != INT_MAX) {
-				// ¸¸¾à ÇöÀç °¡Áö°í ÀÖ´Â °ª°ú ÀÌµ¿ ÇßÀ» ¶§ÀÇ °ªÀ» ºñ±³ÇÏ¿©
-				// ´õ ÀÛÀº °ªÀ» ³Ö´Â´Ù
-				dp[i + j] = min(dp[i] + 1, dp[i + j]);
-			}
-		}
-	}
-
-	if (dp[n - 1] == INT_MAX) {
-		printf("-1\n");
-	}
-	else {
-		printf("%d\n", dp[n - 1]);
-	}
+    if (dp[n - 1] == MAX) {
+        printf("-1\n");
+    } else {
+        printf("%d\n", dp[n - 1]);
+    }
 }

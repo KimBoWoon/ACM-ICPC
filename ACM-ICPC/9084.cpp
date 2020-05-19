@@ -1,19 +1,9 @@
-//
-// Created by null on 11/11/17.
-//
-
-#define LOCAL
-
 #include <cstdio>
 
 int t, n, m;
 int coin[21];
 
 int main() {
-#ifdef LOCAL
-    freopen("input.txt", "r", stdin);
-#endif
-
     scanf("%d", &t);
 
     while (t--) {
@@ -28,8 +18,12 @@ int main() {
         scanf("%d", &m);
 
         dp[0] = 1;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { // n개의 동전
+            // m원을 만드는 경우의 수 구하기
+		    // money[i]원 부터 시작하는 이유 : money[i]원 보다 작은 값은 당연히 money[i]원으로 만들 수 없기 때문
             for (int j = coin[i]; j <= m; j++) {
+                // j원을 만드는 경우의 수
+			    // 이전에 구해둔 경우의 수를 가지고 구하기
                 dp[j] += dp[j - coin[i]];
             }
         }

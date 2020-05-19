@@ -1,8 +1,6 @@
 #include <cstdio>
 using namespace std;
 
-#pragma warning(disable:4996)
-
 unsigned long long arr[70] = { 0 };
 
 int main() {
@@ -10,19 +8,12 @@ int main() {
 
 	scanf("%d", &t);
 
-	for (int i = 0; i < 70; i++) {
-		if (i < 2) {
-			arr[i] = 1;
-		}
-		else if (i == 2) {
-			arr[i] = 2;
-		}
-		else if (i == 3) {
-			arr[i] = 4;
-		}
-		else if (i > 3) {
-			arr[i] = arr[i - 1] + arr[i - 2] + arr[i - 3] + arr[i - 4];
-		}
+	arr[0] = 1;
+	arr[1] = 1;
+	arr[2] = 2;
+	arr[3] = 4;
+	for (int i = 4; i < 70; i++) {
+		arr[i] = arr[i - 1] + arr[i - 2] + arr[i - 3] + arr[i - 4];
 	}
 
 	while (t--) {
@@ -33,3 +24,5 @@ int main() {
 		printf("%lld\n", arr[n]);
 	}
 }
+
+// 문제의 점화식을 그대로 옮기면 되는 문제

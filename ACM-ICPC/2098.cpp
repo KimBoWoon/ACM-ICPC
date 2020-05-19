@@ -1,13 +1,6 @@
-//
-// Created by null on 11/10/17.
-//
-
-#define LOCAL
-
 #include <cstdio>
 #include <algorithm>
 #include <climits>
-
 using namespace std;
 
 int n, visit;
@@ -44,10 +37,6 @@ int tsp(int cur, int stat) {
 }
 
 int main() {
-#ifdef LOCAL
-    freopen("input.txt", "r", stdin);
-#endif
-
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
